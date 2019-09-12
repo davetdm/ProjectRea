@@ -3,41 +3,34 @@
         <div class="container py-md-5">
             <div class="row">
                 <div class="col-lg-3 footer_wthree_gridf mt-lg-5">
-                    <h2><a href="index.html"><span>B</span>aggage
+                    <h2><a href="index.php"><span>B</span>aggage
                         </a> </h2>
                     <label class="sub-des2">Online Store</label>
                 </div>
                 <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-4">
                     <ul class="footer_wthree_gridf_list">
                         <li>
-                            <a href="index.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Home</a>
+                            <a href="index.php"><span class="fa fa-angle-right" aria-hidden="true"></span> Home</a>
                         </li>
                         <li>
-                            <a href="about.html"><span class="fa fa-angle-right" aria-hidden="true"></span> About</a>
+                            <a href="<?php echo base_url(); ?>about"><span class="fa fa-angle-right" aria-hidden="true"></span> About</a>
                         </li>
+                    
                         <li>
-                            <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop</a>
-                        </li>
-                        <li>
-                            <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
+                            <a href="<?php echo base_url(); ?>collections"><span class="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
                         </li>
 
                     </ul>
                 </div>
                 <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
                     <ul class="footer_wthree_gridf_list">
+                    
                         <li>
-                            <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a>
+                            <a href="<?php echo base_url(); ?>privacy"><span class="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a>
                         </li>
-
+                      
                         <li>
-                            <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a>
-                        </li>
-                        <li>
-                            <a href="contact.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
+                            <a href="<?php echo base_url(); ?>contact"><span class="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -45,14 +38,14 @@
                 <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
                     <ul class="footer_wthree_gridf_list">
                         <li>
-                            <a href="login.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Login </a>
+                            <a href="<?php echo base_url(); ?>login"><span class="fa fa-angle-right" aria-hidden="true"></span> Login </a>
                         </li>
 
                         <li>
-                            <a href="register.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Register</a>
+                            <a href="<?php echo base_url(); ?>register"><span class="fa fa-angle-right" aria-hidden="true"></span>Register</a>
                         </li>
                         <li>
-                            <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a>
+                            <a href="<?php echo base_url(); ?>privacy"><span class="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a>
                         </li>
 
                     </ul>
@@ -74,15 +67,6 @@
             </div>
         </div>
     </div>
-    <!-- //footer -->
 
-    <!-- copyright -->
-    <div class="cpy-right text-center py-3">
-        <p>© 2019 Baggage. All rights reserved | Design by
-            <a href="http://w3layouts.com"> W3layouts.</a>
-        </p>
-
-    </div>
-    <!-- //copyright -->
     </body>
 </html>
