@@ -5,7 +5,7 @@ CREATE TABLE orders(
     total_cost decimal not null default 0.0,
     order_date TIMESTAMP not null default current_timestamp,
     user_id int not null REFERENCES users(id)
-;
+);
 
 CREATE TABLE order_item(
     id int not null primary key auto_increment,
@@ -55,10 +55,10 @@ CREATE TABLE  user_log(
 );
 
 
-INSERT INTO product (name, price) VALUES
-   ('messanger_bag',675 ),
-   ('shoulder_bag', 475),
-   ('sling_bag',675);
-   ('hobo_bag',675);
-   ('stachel_bag',475);
-   ('tote_bag',675);
+INSERT INTO `product` (`id`, `name`, `price`) VALUES
+(1, 'messanger_bag', 675),
+(2, 'shoulder_bag', 475),
+(3, 'sling_bag', 675),
+(4, 'hobo_bag',  675),
+(5, 'stachel_bag',  475),
+(6, 'tote_bag',  675);
