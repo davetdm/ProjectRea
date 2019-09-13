@@ -59,11 +59,3 @@ CREATE TABLE product(
     picture varchar(256) not null default ''
 );
 
-
-INSERT INTO `product` (`id`, `name`, `price`) VALUES
-(1, 'messanger_bag', 675),
-(2, 'shoulder_bag', 475),
-(3, 'sling_bag', 675),
-(4, 'hobo_bag',  675),
-(5, 'stachel_bag',  475),
-(6, 'tote_bag',  675);
