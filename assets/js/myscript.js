@@ -1,0 +1,137 @@
+
+// password validation for register form
+
+window.onload = function() {
+
+    var subButton = document.getElementById("submit");
+    subButton.onclick = function value(registerForm) {
+
+    }
+
+};
+
+function value(registerForm) {
+
+    //check for lower case
+    if (!registerForm.password1.value.match(/[a-z]/)) {
+        alert("Password must contain at least one lower case letter.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+    //Validating length
+    if ((registerForm.password1.value).length < 8) {
+        alert("Your password has less than 8 characters.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+    //Validating confirmation matches
+    if (registerForm.cPassword.value != registerForm.password1.value) {
+        alert("Your confirmation password does not match.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+    //Validating confirmation input
+    if (registerForm.cPassword.value == "") {
+        alert("Please confirm your password.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+    //check for upper case
+    if (!registerForm.password1.value.match(/[A-Z]/)) {
+        alert("Password must contain at least one upper case letter.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+    //check for number
+    if (!registerForm.password1.value.match(/\d+/g)) {
+        alert("Password must contain at least one number.");
+        registerForm.password1.focus();
+        return false;
+    }
+
+
+    //confirm passwords match and have been created
+    if ((registerForm.password1.value) == (registerForm.cPassword.value)) {
+        alert("Your password has been created!");
+        return true;
+    }
+
+};
+
+//Email validation for register form
+
+$('#registerForm').submit(function () {
+
+    var a = document.forms["registerForm"]["email"].value;
+    if (a == null || a == "") {
+        alert("You forgot to enter your Email!");
+        return false;
+    } else {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (a.match(mailformat)) {
+            document.registerForm.email.focus();
+        } else {
+            alert("You have entered an invalid Email Address!");
+            document.registerForm.email.focus();
+            return false;
+        }
+    }
+
+});
+
+$('#registerForm').submit(function(){
+
+    var url = $('#registerForm').attr("action");
+    var method = $('#registerForm').attr("method");
+    var data = $('#registerForm').serialize();
+
+    $.ajax({
+        type: method,
+        url: url,
+        data: data,
+        success: function(response){
+            alert(response);
+            window.location.reload();
+        }
+    });
+
+    return false;
+});
+
+$("#name").keypress(function(thato){
+    var input = thato.which;
+    if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
+        thato.preventDefault();
+        alert('Please Enter Alphabatic Only');
+        return false;
+    }
+});
+
+$("#lname").keypress(function(e){
+    var input = e.which;
+    if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
+        e.preventDefault();
+        alert('Please Enter Alphabatic Only');
+        return false;
+    }
+});
+
+function validate() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == null || username == "") {
+        alert("Please enter the username.");
+        return false;
+    }
+    if (password == null || password == "") {
+        alert("Please enter the password.");
+        return false;
+    }
+    alert('Login successful');
+
+} 

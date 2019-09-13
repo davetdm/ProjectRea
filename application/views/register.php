@@ -13,40 +13,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form id="registerForm" action="register" method="post">
                         <div class="field-group">
                         <div class="content-input-field">
-                                <input name="name" id="fname" type="text" value="" placeholder="First Name" required="">
+                                <input name="fname" id="fname" type="text" value="" placeholder="First Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
                         <div class="content-input-field">
-                                <input name="name" id="lname" type="text" value="" placeholder="Last Name" required="">
+                                <input name="lname" id="lname" type="text" value="" placeholder="Last Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
 
                         <div class="content-input-field">
-                                <input name="Uname" id="Uname" type="text" value="" placeholder="User Name" required="">
+                                <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
 
                             <div class="content-input-field">
-                                <input name="text1" id="text1" type="email" value="" placeholder="User Email" required="">
+                                <input name="email" id="email" type="email" value="" placeholder="User Email" required="">
                             </div>
                         </div>
                         <div class="field-group">
 
                             <div class="content-input-field">
-                                <input name="text1" id="text3" type="text" value="" placeholder="UserPhone" required="">
+                                <input name="phone" id="phone" type="text" value="" placeholder="UserPhone" required="">
                             </div>
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="password" id="pass1" type="Password" placeholder="Password">
+                                <input name="password1" id="password1" type="Password" placeholder="Password">
                             </div>
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="password" id="pass2" type="Password" placeholder="Confirm Password">
+                                <input name="cPassword" id="cPassword" type="Password" placeholder="Confirm Password">
                             </div>
                         </div>
                         <div class="content-input-field">

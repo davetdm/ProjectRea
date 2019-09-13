@@ -11,20 +11,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <span class="fa fa-unlock-alt"></span>
           </div>
             <div class="content-bottom">
-                 <form action="#" method="post">
+                 <form name="loginForm" id="loginForm" action="login" method="post">
                      <div class="field-group">
 
                          <div class="content-input-field">
-                             <input name="text1" id="text1" type="text" value="" placeholder="User Name" required="">
+                             <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
                          </div>
                     </div>
                     <div class="field-group">
                         <div class="content-input-field">
-                               <input name="password" id="myInput" type="Password" placeholder="Password">
+                               <input name="password1" id="myInput" type="Password" placeholder="Password">
                           </div>
                      </div>
                     <div class="content-input-field">
-                            <button type="submit" class="btn">Sign In</button>
+                            <button type="submit" class="btn" onclick="validate();">Sign In</button>
                         </div>
                         <ul class="list-login">
                             <li class="switch-slide">
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      </ul>
                      <ul class="list-login-bottom">
                           <li class="">
-                              <a href="register.html" class="">Don't have an Account?</a>
+                              <a href="register" class="">Don't have an Account?</a>
                          </li>
                          <li class="">
                               <a href="#" class="text-right">Need Help?</a>

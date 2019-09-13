@@ -13,5 +13,6 @@ class Login extends CI_Controller {
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
 		$this->load->view($page, $data);
-	}
+    }
+    
 }
