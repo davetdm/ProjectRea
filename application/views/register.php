@@ -10,11 +10,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span class="fa fa-user-circle-o"></span>
                 </div>
                 <div class="content-bottom">
-                    <form action="#" method="post">
+                    <form id="registerForm" action="register" method="post">
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="name" id="fname" type="text" value="" placeholder="First Name" required="">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="name" id="lname" type="text" value="" placeholder="Last Name" required="">
+                            </div>
+                        </div>
                         <div class="field-group">
 
-                            <div class="content-input-field">
-                                <input name="text1" id="text1" type="text" value="" placeholder="User Name" required="">
+                        <div class="content-input-field">
+                                <input name="Uname" id="Uname" type="text" value="" placeholder="User Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
@@ -31,7 +41,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="password" id="myInput" type="Password" placeholder="Password">
+                                <input name="password" id="pass1" type="Password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="content-input-field">
+                                <input name="password" id="pass2" type="Password" placeholder="Confirm Password">
                             </div>
                         </div>
                         <div class="content-input-field">
