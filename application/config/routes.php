@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['welcome_controller'] = "welcome";
+$route['product_controller'] = 'product/add';
