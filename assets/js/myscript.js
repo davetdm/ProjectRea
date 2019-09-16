@@ -103,16 +103,16 @@ $('#registerForm').submit(function(){
     return false;
 });
 
-$("#name").keypress(function(thato){
-    var input = thato.which;
+$("#first_name").keypress(function(d){
+    var input = d.which;
     if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
-        thato.preventDefault();
+        d.preventDefault();
         alert('Please Enter Alphabatic Only');
         return false;
     }
 });
 
-$("#lname").keypress(function(e){
+$("#surname").keypress(function(e){
     var input = e.which;
     if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
         e.preventDefault();

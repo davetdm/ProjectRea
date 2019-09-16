@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <span class="fa fa-unlock-alt"></span>
           </div>
             <div class="content-bottom">
-                 <form name="loginForm" id="loginForm" action="login" method="post">
+                 <form name="loginForm" id="loginForm" action="<?php echo base_url('login/userLogin'); ?>" method="post">
                      <div class="field-group">
 
                          <div class="content-input-field">
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </label>
                           </li>
                           <li>
-                              <a href="#" class="text-right">Forgot password?</a>
+                              <a href="forgot_password" class="text-right">Forgot password?</a>
                          </li>
                           <li class="clearfix"></li>
                      </ul>

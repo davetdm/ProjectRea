@@ -18,5 +18,17 @@ class WelcomeModel extends CI_Model {
     $query = $this->db->get("product"); // database table to get the products
     return $query->result_array(); // return type
   }
+
+  public function registerUser($data)
+  {
+    $this->db->insert('users', $data);
+    return true;
+  }
+  public function login(){
+    $this->db->select('*');
+    $query = $this->db->get("users");
+    return $query->result_array();  
+
+  }
         
 }
