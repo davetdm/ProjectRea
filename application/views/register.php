@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span class="fa fa-user-circle-o"></span>
                 </div>
                 <div class="content-bottom">
-                    <form id="registerForm" action="<?php echo base_url('register/registerUser'); ?>" method="post">
+                    <form id="registerForm" action="<?php echo site_url('register/register_user'); ?>" method="post">
                         <div class="field-group">
                         <div class="content-input-field">
                                 <input name="first_name" id="first_name" type="text" value="" placeholder="First Name" required="">
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="field-group">
 
                         <div class="content-input-field">
-                                <input name="type" id="type" type="text" value="" placeholder="User Name" required="">
+                                <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
                             </div>
                         </div>
                         <div class="field-group">

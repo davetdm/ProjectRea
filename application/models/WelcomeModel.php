@@ -24,11 +24,10 @@ class WelcomeModel extends CI_Model {
     $this->db->insert('users', $data);
     return true;
   }
-  public function login(){
-    $this->db->select('*');
-    $query = $this->db->get("users");
-    return $query->result_array();  
-
+  public function user_Login($type,$password){
+    $this->db->where('type',$type);
+    $this->db->where('password',$password);
+    $result = $this->db->get('users',1);
+    return $result;
   }
-        
 }

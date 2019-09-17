@@ -16,13 +16,14 @@ class Register extends CI_Controller {
         $this->load->view($page, $data);
         //$this->load->view("myscript");
     }
-    public function registerUser()
+    public function register_user()
     {
         $data=array(
-            'type'=>$this->input->post('type'),
             'first_name'=>$this->input->post('first_name'),
             'surname'=>$this->input->post('surname'),
+            'type'=>$this->input->post('userName'),
             'email'=>$this->input->post('email'),
+            'is_online'=> false,
             'password'=>md5($this->input->post('password1')),
             'phone_number'=>$this->input->post('phone_number')
             );
@@ -33,7 +34,7 @@ class Register extends CI_Controller {
         } else {
             var_dump($result);
         }
-        $this->load->view('register');
+
     }
 
 }

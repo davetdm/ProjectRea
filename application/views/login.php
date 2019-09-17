@@ -11,16 +11,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <span class="fa fa-unlock-alt"></span>
           </div>
             <div class="content-bottom">
-                 <form name="loginForm" id="loginForm" action="<?php echo base_url('login/userLogin'); ?>" method="post">
+                 <form name="loginForm" id="loginForm" action="<?php echo site_url('login/userLogin'); ?>" method="post">
+                 <?php echo $this->session->flashdata('msg');?>
+                 <div class="field-group">
+                         <div class="content-input-field">
+                             <input name="id" id="id" type="hidden" value="" placeholder="User Name" required="">
+                         </div>
+                    </div>
                      <div class="field-group">
-
                          <div class="content-input-field">
                              <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
                          </div>
                     </div>
                     <div class="field-group">
                         <div class="content-input-field">
-                               <input name="password1" id="myInput" type="Password" placeholder="Password">
+                               <input name="password1" id="password1" type="Password" placeholder="Password">
                           </div>
                      </div>
                     <div class="content-input-field">

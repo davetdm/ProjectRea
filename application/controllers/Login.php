@@ -17,19 +17,27 @@ class Login extends CI_Controller {
     }
     public function userLogin()
     {
-        $user_login=array(  
-        'type'=>$this->input->post('userName'),
-        'password'=>md5($this->input->post('password1'))); 
+        $type = $this->input->post('userName',TRUE);
+        $password = md5($this->input->post('password1',TRUE));
+        $result = $this->WelcomeModel->user_Login($type,$password);
 
-        $data['users']=$this->WelcomeModel->userLogin();
+        if($result->num_rows() > 0){
+            $data  = $result->row_array();
+            $type = $data['type'];
+            $password = $data['password'];
+            $sesdata = array(
+                'userName'  => $type,
+                'password'     => $password,
+                'is_online' => TRUE
+            );
+            echo "login successful";
+          // $this->session->set_userdata($sesdata);
        
-            $this->session->set_userdata('id',$data['users'][0]['id']);
-            $this->session->set_userdata('type',$data['users'][0]['type']);
-            $this->session->set_userdata('email',$data['users'][0]['email']);
-            $this->session->set_userdata('first_name',$data['users'][0]['first_name']);
-            $this->session->set_userdata('surname',$data['users'][0]['surname']);
-            $this->session->set_userdata('phone_number',$data['users'][0]['phone_number']);
-            echo $this->session->set_userdata('id'); 
+        }else{
+        echo $this->session->set_flashdata('msg','Username or Password is Wrong');
+        redirect('login');
+    }
+    print_r($sesdata);
     }
     
 }
