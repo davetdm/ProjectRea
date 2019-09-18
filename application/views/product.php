@@ -3,30 +3,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php require_once "templates/header.php"; ?>
 
-<div class="row page-content">
-  <div class="col-lg-12">
-    <h2>Product Form</h2>
-    <?php if(validation_errors()) { ?>
-      <div class="alert alert-danger">
-        <?php echo validation_errors(); ?>
-      </div>
-    <?php } ?>
-    <?php echo form_open('product/actionadd'); ?>
-    
-      <div class="form-group">
-         <input type="text" name="name" class="form-control" id="name" placeholder="Product Name">
-      </div>
-      <div class="form-group">
-         <input type="text" name="color" class="form-control" id="color" placeholder="Product Color">
-      </div>
-      <div class="form-group">
-         <input type="text" name="price" class="form-control" id="price" placeholder="Product Price">
-      </div>
-      <div class="form-group pull-right">
-         <button type="submit" id="add" class="btn btn-primary">Add Product</button>
-      </div>
-    </div>
-    <?php echo form_close(); ?>
-  
-</div>
+
+<section class="banner-bottom py-5">
+        <div class="container">
+            <div class="content-grid">
+            <h2> Products</h2>
+            <br>
+                <div class="content-bottom">
+                    <form id="productForm" action="<?php echo base_url(); ?>product/addProduct"  method="post">
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="name" id="name" type="text" value="" placeholder="Product Name" required="">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="color" id="color" type="text" value="" placeholder="Product Color" required="">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="price" id="price" type="number" value="" placeholder="Product Price" required="">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                        <div class="content-input-field">
+                                <input name="picture" id="image" type="text" value="" placeholder="Product Image" required="">
+                            </div>
+                        </div>
+                        <div class="content-input-field">                         
+                        <button  type="submit" id="add" class="btn btn-primary btn-lg">Add Product</button></a> 
+                        </div>
+                        </div>
+                        <a href="display" class="btn display">display</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+ </section>
 <?php require_once "templates/footer.php"; ?>

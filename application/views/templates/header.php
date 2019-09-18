@@ -36,6 +36,7 @@
                         <ul class="menu">
                             <li class="active"><a href="home">Home</a></li>
                             <li><a href="about">About Us</a></li>
+                            <li><a href="product">Product</a></li>
                             <li>
                                 <!-- First Tier Drop Down -->
                                 <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>

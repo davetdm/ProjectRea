@@ -3,41 +3,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product extends CI_Controller {
 
-    public function __construct() {
-        parent::__construct();
-        $this->load->helper('url');
+    public function __construct()
+    {
+    parent::__construct();
+    
+    $this->load->model('ProductModel');
     }
     
-	public function index($page = "product")
-	{
-        $data['title'] = ucfirst($page);
-        $data["assets"] = $this->config->item('assets');
-		$this->load->view($product, $data);
-    }
-    
-    public function add(){
-        $this->load->library('form_validation');
-    
-    $this->form_validation->set_rules('name', 'Product Name');
-    $this->form_validation->set_rules('color', 'Product Color');
-    $this->form_validation->set_rules('price', 'Price');
- 
-    if($this->form_validation->run() == FALSE) {
-      $this->add();
-    } else {
-      // post values
-      $name = $this->input->post('name');
-      $color = $this->input->post('color');
-      $price = $this->input->post('price');
-      
-      // set post values
-      $this->product->setName($name);
-      $this->product->setColor($color);
-      $this->product->setPrice($price);
-      
-      $this->product->setStatus(1);
-      // insert values in database
-      $this->product->createUser();
-      redirect('users/index');
-    }
+    public function index($page = "product")
+    {
+       $data['title'] = ucfirst($page);
+       $data["assets"] = $this->config->item('assets');
+       $this->load->view($page, $data);
+       //$this->load->view('content', $data);
+       //$this->load->view("myscript");
+   }
 
+   public function addProduct()
+   {
+       $data=array(
+           'name'=>$this->input->post('name'),
+           'color'=>$this->input->post('color'),
+           'price'=>$this->input->post('price'),
+          
+           );
+          // print_r($data);
+       $result = $this->ProductModel->addProduct($data);
+       if ($result == true){
+           echo "added successfully";
+       } else {
+           var_dump($result);
+       }
+     
+   }
+  
+   function updateProduct($page = "display") {
+
+		$id = $_POST['id'];
+		$name = $_POST['name'];
+		$color = $_POST['color'];
+		$price = $_POST['Price'];
+		$picture = $_POST['picture'];
+		
+		if($this->db->updateProduct($id, $name,$color , $price, $picture) === TRUE) {
+			return TRUE;
+		}
+		
+		return FALSE;
+	}
+  
+ 
+}
+   
