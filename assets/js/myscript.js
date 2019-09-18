@@ -103,16 +103,16 @@ $('#registerForm').submit(function(){
     return false;
 });
 
-$("#name").keypress(function(thato){
-    var input = thato.which;
+$("#first_name").keypress(function(d){
+    var input = d.which;
     if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
-        thato.preventDefault();
+        d.preventDefault();
         alert('Please Enter Alphabatic Only');
         return false;
     }
 });
 
-$("#lname").keypress(function(e){
+$("#surname").keypress(function(e){
     var input = e.which;
     if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
         e.preventDefault();
@@ -135,6 +135,7 @@ function validate() {
     alert('Login successful');
 
 } 
+<<<<<<< HEAD
 $('#productForm').submit(function() {
 
     var url = $('#productForm').attr("action");
@@ -178,3 +179,28 @@ $("#color").keypress(function(red){
     }
 });
 
+=======
+function validatePhone(fld) {
+    var error = "";
+    var stripped = fld.value.replace(/[\(\)\.\-\ ]/g, '');
+ 
+   if (fld.value == "") {
+        error = "You didn't enter a phone number.\n";
+        fld.style.background = 'Yellow';
+        alert(error);
+		return false;
+ 
+    } else if (isNaN(parseInt(stripped))) {
+        error = "The phone number contains illegal characters. Don't include dash (-)\n";
+       // fld.style.background = 'Yellow';
+        alert(error);
+		return false;
+    } else if (!(stripped.length == 10)) {
+        error = "The phone number is the wrong length. Make sure you included an area code. Don't include dash (-)\n";
+        fld.style.background = 'Yellow';
+        alert(error);
+		return false;
+    }
+    return true;
+}
+>>>>>>> a19140179de71d7823f27ab840c85e47b0121cec

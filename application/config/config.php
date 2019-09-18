@@ -28,6 +28,8 @@ $config['base_url'] = 'http://www.projectrea.local/';
 $config['assets'] = "assets";
 $config['images'] = "assets/images/";
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File

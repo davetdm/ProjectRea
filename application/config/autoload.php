@@ -60,7 +60,11 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
     "database",
+<<<<<<< HEAD
     
+=======
+    "form_validation",'javascript'
+>>>>>>> a19140179de71d7823f27ab840c85e47b0121cec
 );
 
 /*
@@ -96,7 +100,10 @@ $autoload['helper'] = array(
     'url',
     'form'
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> a19140179de71d7823f27ab840c85e47b0121cec
 
 /*
 | -------------------------------------------------------------------
