@@ -72,7 +72,7 @@
         <!--/banner-->
         <div class="banner-wthree-info container">
             <div class="row">
-                <div class="col-lg-5 banner-left-info">
+                <div class="col-lg-3 banner-left-info">
                     <h3>The Largest Range <span>of HandBags</span></h3>
                     <a href="shop" class="btn shop">Shop Now</a>
                 </div>

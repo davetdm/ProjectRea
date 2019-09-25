@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url(); ?>product/editProduct?id=<?php echo $product->id; ?>" ><i class="fa fa-edit"></i></a>
                             <a href="<?php echo base_url(); ?>product/deleteProduct?id=<?php echo $product->id; ?>">
                                 <i class="fa fa-trash-o text-danger"></i>
-                                <?php echo $product->id; ?>
+
                             </a>
                     </tr>
                     <?php }; ?>

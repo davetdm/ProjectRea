@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="content-input-field">                         
-                            <button type="submit" id="save" class="btn btn-primary btn-lg">Add Product</button></a> 
+                            <button type="submit" id="save" class="btn btn-primary btn-lg">Save Product</button></a> 
                         </div>
                     </form>
                 </div>

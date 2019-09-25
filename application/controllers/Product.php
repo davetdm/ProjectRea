@@ -79,22 +79,23 @@ class Product extends CI_Controller {
         $result = $this->ProductModel->saveProduct($data);
        
         if ($result == true){
-            echo "added successfully";
+            echo "Saved successfully";
         } else {
             var_dump($result);
         }
         
+        
 } 
     public function deleteData()
     {
-        $id=$this->uri->segment(3);
-        $this->ProductModel->deleteData($id);
+        $id=$this->input->get('id');
+	    $this->ProductModel->delete($id);
        redirect (base_url()."Product/deleted");
     }
   
     Public function deleted()
     {
-       $this-> index();
+       $this-> viewProducts();
     }
     
 }
