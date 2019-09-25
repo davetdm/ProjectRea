@@ -25,8 +25,8 @@
                     </div>
 
                     <div class="forms ml-auto">
-                        <a href="login" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
-                        <a href="register" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
+                        <a href="<?php echo base_url(); ?>login" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
+                        <a href="<?php echo base_url(); ?>register" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
                     </div>
                 </div>
                 <div class="nav-top-wthree">
@@ -34,9 +34,9 @@
                         <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
                         <input type="checkbox" id="drop" />
                         <ul class="menu">
-                            <li class="active"><a href="home">Home</a></li>
-                            <li><a href="about">About Us</a></li>
-                            <li><a href="product">Product</a></li>
+                            <li class="active"><a href="<?php echo base_url(); ?>home">Home</a></li>
+                            <li><a href="<?php echo base_url(); ?>about">About Us</a></li>
+                            <li><a href="<?php echo base_url(); ?>product">Product</a></li>
                             <li>
                                 <!-- First Tier Drop Down -->
                                 <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
@@ -51,8 +51,8 @@
                                 </ul>
                             </li>
 
-                            <li><a href="shop">Collections</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li><a href="<?php echo base_url(); ?>shop">Collections</a></li>
+                            <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
                         </ul>
                     </nav>
                     <!-- //nav -->

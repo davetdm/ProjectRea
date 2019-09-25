@@ -9,38 +9,44 @@ class ProductModel extends CI_Model
           
         $this->db->insert('product', $data);
         return true;
+
+        $this->load->view('productForm');
       }
       
-      function getProduct()
+      function getProducts()
       {
-        $this->db->select("name,color,price, picture"); 
-        $this->db->from('product');
-        $query = $this->db->get();
-        return $query->result();
+          $this->db->select("id, name,color,price, picture"); 
+          $this->db->from('product');
+          $query = $this->db->get();
+          return $query->result();
        }
+
+      function singleProduct($id){
+
+          $this->db->select("id, name,color,price, picture"); 
+          $this->db->from('product');
+          $this->db->where('id', $id);
+          $query = $this->db->get();
+          return $query->result()[0];
+      }
        
-      public function update($id, $name, $color, $price, $picture) {
-      
-        $data = array(
-              'name' => $name,
-              'color' => $color,
-              'price' => $price,
-              'picture' => $picture 
-            );        
-        $this->db->where('id', $id);
-        $this->db->update($this->products, $data);
-        
-        if ($this->db->affected_rows()) {
-          return TRUE;
-        }
-        
-        return FALSE;
+     public function updateProduct($id, $data)
+      {
+          $this->db->where('id', $id);
+          $this->db->update($this->product, $data);
       }
 
-    Public function deleteProduct($id) 
-    {
-      $this->db->query("delete  from product where id='".$id."'");
+    Public function deleteData($id) 
+     {
+      $this->db->where('id', $id);
+      $this->db->delete('product');
       }
-  
+
+    public function saveProduct($id){
+        
+       $this->db->set('product', $data);
+        return true;
+      }
+      
  
   }

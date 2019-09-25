@@ -19,6 +19,37 @@ class Product extends CI_Controller {
        //$this->load->view("myscript");
    }
 
+   public function viewProducts(){
+        $data['title'] = ucfirst("View Products");
+        $data["assets"] = $this->config->item('assets');
+        $data['products'] = $this->ProductModel->getProducts(); 
+        $this->load->view("view_products", $data);
+   }
+
+   public function editProduct(){
+        $id = $this->input->get('id');
+        $product = $this->ProductModel->singleProduct($id);
+        $data = [
+            "title" => "Edit Product",
+            "assets" => $this->config->item('assets'),
+            "product" => $product
+        ];
+        
+        $this->load->view("edit_product", $data);
+   }    
+
+   public function deleteProduct(){
+        $id = $this->input->get('id');
+        $product = $this->ProductModel->singleProduct($id);
+        $data = [
+            "title" => "delete Product",
+            "assets" => $this->config->item('assets'),
+            "product" => $product
+        ];
+        
+        $this->load->view("delete_product", $data);
+   }
+
    public function addProduct()
    {
        $data=array(
@@ -34,24 +65,37 @@ class Product extends CI_Controller {
        } else {
            var_dump($result);
        }
-     
+       
    }
   
-   function updateProduct($page = "display") {
+   function saveProduct() {
 
-		$id = $_POST['id'];
-		$name = $_POST['name'];
-		$color = $_POST['color'];
-		$price = $_POST['Price'];
-		$picture = $_POST['picture'];
-		
-		if($this->db->updateProduct($id, $name,$color , $price, $picture) === TRUE) {
-			return TRUE;
-		}
-		
-		return FALSE;
-	}
+	$data=array(
+        'id'=>$this->input->post('id'),
+        'name'=>$this->input->post('name'),
+        'color'=>$this->input->post('color'),
+        'price'=>$this->input->post('price'),
+        );
+        $result = $this->ProductModel->saveProduct($data);
+       
+        if ($result == true){
+            echo "added successfully";
+        } else {
+            var_dump($result);
+        }
+        
+} 
+    public function deleteData()
+    {
+        $id=$this->uri->segment(3);
+        $this->ProductModel->deleteData($id);
+       redirect (base_url()."Product/deleted");
+    }
   
- 
+    Public function deleted()
+    {
+       $this-> index();
+    }
+    
 }
    

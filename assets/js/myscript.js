@@ -1,14 +1,14 @@
 
 // password validation for register form
 
-window.onload = function() {
+// window.onload = function() {
 
-    var subButton = document.getElementById("submit");
-    subButton.onclick = function value(registerForm) {
+//     var subButton = document.getElementById("submit");
+//     subButton.onclick = function value(registerForm) {
 
-    }
+//     }
 
-};
+// };
 
 function value(registerForm) {
 
@@ -135,20 +135,20 @@ function validate() {
     alert('Login successful');
 
 } 
-<<<<<<< HEAD
+
 $('#productForm').submit(function() {
 
     var url = $('#productForm').attr("action");
     var method = $('#productForm').attr("method");
     var data = $('#productForm').serialize();
-
+   
     $.ajax({
         url: url,
         method: method,
         data: data,
         success: function (resp) {
             console.log(resp);
-            alert("Product successfully saved");
+            alert("Product successfully added");
             window.location.reload();
         }
     });
@@ -179,7 +179,6 @@ $("#color").keypress(function(red){
     }
 });
 
-=======
 function validatePhone(fld) {
     var error = "";
     var stripped = fld.value.replace(/[\(\)\.\-\ ]/g, '');
@@ -203,4 +202,40 @@ function validatePhone(fld) {
     }
     return true;
 }
->>>>>>> a19140179de71d7823f27ab840c85e47b0121cec
+    $('#saveForm').submit(function() {
+
+    var url = $('#saveForm').attr("action");
+    var method = $('#saveForm').attr("method");
+    var data = $('#saveForm').serialize();
+
+    $.ajax({
+        url: url,
+        method: method,
+        data: data,
+        success: function (resp) {
+            console.log(resp);
+            alert("Product successfully saved");
+            window.location.reload();
+        }
+    });
+    return false;
+
+});
+
+$(document).ready(function(){
+    $('$deleteData').click(function(){
+        var id = $(this).attr("id");
+        if(Confirm("Are you sure you want to delete?"))
+        {
+            window.location="<?php echo base_url(); ?>Product/deleteData/"+id;
+        }
+        else 
+        { 
+            return false
+        }
+       
+    });
+});
+ 
+
+
