@@ -1,14 +1,14 @@
 
 // password validation for register form
 
-window.onload = function() {
+// window.onload = function() {
 
-    var subButton = document.getElementById("submit");
-    subButton.onclick = function value(registerForm) {
+//     var subButton = document.getElementById("submit");
+//     subButton.onclick = function value(registerForm) {
 
-    }
+//     }
 
-};
+// };
 
 function value(registerForm) {
 
@@ -135,6 +135,50 @@ function validate() {
     alert('Login successful');
 
 } 
+
+$('#productForm').submit(function() {
+
+    var url = $('#productForm').attr("action");
+    var method = $('#productForm').attr("method");
+    var data = $('#productForm').serialize();
+   
+    $.ajax({
+        url: url,
+        method: method,
+        data: data,
+        success: function (resp) {
+            console.log(resp);
+            alert("Product successfully added");
+            window.location.reload();
+        }
+    });
+    return false;
+
+});
+function validatePrice($price) {
+    if (preg_match("/^[0-9]+(\.[0-9]{2})?$/", $price)) {
+        return true;  
+    }
+    return false;
+}
+$("#name").keypress(function(betswe){
+    var input = betswe.which;
+    if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
+        betswe.preventDefault();
+        alert('Please Enter Alphabatic Only');
+        return false;
+    }
+});
+
+$("#color").keypress(function(red){
+    var input = red.which;
+    if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
+        red.preventDefault();
+        alert('Please choose a correct color');
+        return false;
+    }
+});
+
 function validatePhone(fld) {
     var error = "";
     var stripped = fld.value.replace(/[\(\)\.\-\ ]/g, '');
@@ -158,3 +202,40 @@ function validatePhone(fld) {
     }
     return true;
 }
+    $('#saveForm').submit(function() {
+
+    var url = $('#saveForm').attr("action");
+    var method = $('#saveForm').attr("method");
+    var data = $('#saveForm').serialize();
+
+    $.ajax({
+        url: url,
+        method: method,
+        data: data,
+        success: function (resp) {
+            console.log(resp);
+            alert("Product successfully saved");
+            window.location.reload();
+        }
+    });
+    return false;
+
+});
+
+$(document).ready(function(){
+    $('$deleteData').click(function(){
+        var id = $(this).attr("id");
+        if(Confirm("Are you sure you want to delete?"))
+        {
+            window.location="<?php echo base_url(); ?>Product/deleteData/"+id;
+        }
+        else 
+        { 
+            return false
+        }
+       
+    });
+});
+ 
+
+

@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$799</span> $675.00</span>
+                                    <span class="money"><span class="line">R799</span> R675.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$799</span> $675.00</span>
+                                    <span class="money"><span class="line">R799</span> R675.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$599</span> $475.00</span>
+                                    <span class="money"><span class="line">R599</span> R475.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$799</span> $675.00</span>
+                                    <span class="money"><span class="line">R799</span> R675.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$999</span> $875.00</span>
+                                    <span class="money"><span class="line">R999</span> R875.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -156,7 +156,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$799</span> $675.00</span>
+                                    <span class="money"><span class="line">R799</span> R675.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -182,7 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$799</span> $675.00</span>
+                                    <span class="money"><span class="line">R799</span> R675.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
@@ -208,7 +208,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="product_price">
                                 <div class="grid-price">
-                                    <span class="money"><span class="line">$599</span> $475.00</span>
+                                    <span class="money"><span class="line">R599</span> R475.00</span>
                                 </div>
                             </div>
                             <ul class="stars">
