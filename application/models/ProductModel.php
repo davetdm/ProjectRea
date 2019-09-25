@@ -30,22 +30,36 @@ class ProductModel extends CI_Model
           return $query->result()[0];
       }
        
-     public function updateProduct($id, $data)
-      {
-          $this->db->where('id', $id);
-          $this->db->update($this->product, $data);
-      }
-
-    Public function deleteData($id) 
+     public function update($id, $data)
      {
-      $this->db->where('id', $id);
-      $this->db->delete('product');
+
+      $data=array(
+        'name'=>$this->input->post('name'),
+        'color'=>$this->input->post('color'),
+        'price'=>$this->input->post('price'),
+        'picture'=>$this->input->post('picture'),
+       
+        );
+      if($id==0){
+          return $this->db->insert('product',$data);
+      }else{
+          $this->db->where('id',$id);
+          return $this->db->update('product',$data);
+
+      }        
+
+  }
+
+    Public function delete($id) 
+     {
+      $this->db->query("delete  from product where id='".$id."'");
       }
 
     public function saveProduct($id){
         
        $this->db->set('product', $data);
         return true;
+        $this->load->view('saveForm');
       }
       
  

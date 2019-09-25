@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <img src="<?php echo $product->picture ?>">
                     </p>
                     <br/>
-                    <h4>Are you you want to delete this product?</h4>
+                    <h4>Are you sure you want to delete this product?</h4>
                     <div class="content-input-field">                         
                         <button type="submit"  class="btn btn-primary btn-lg">Delete</button></a> 
                     </div>
