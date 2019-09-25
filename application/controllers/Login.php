@@ -18,8 +18,9 @@ class Login extends CI_Controller {
     public function userLogin()
     {
         $type = $this->input->post('userName',TRUE);
-        $password = md5($this->input->post('password1',TRUE));
+        $password =Sha1($this->input->post($this->salt.'password1',TRUE));
         $result = $this->WelcomeModel->user_Login($type,$password);
+       // $encryptpass = $this->encryption->sha1($salt.$password);
 
         if($result->num_rows() > 0){
             $data  = $result->row_array();
@@ -27,17 +28,18 @@ class Login extends CI_Controller {
             $password = $data['password'];
             $sesdata = array(
                 'userName'  => $type,
-                'password'     => $password,
+                'password'  => $password,
                 'is_online' => TRUE
             );
             echo "login successful";
-          // $this->session->set_userdata($sesdata);
+           $this->session->set_userdata($sesdata);
+           redirect('home');
        
         }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
         redirect('login');
     }
-    print_r($sesdata);
+         print_r($sesdata);
     }
     
 }

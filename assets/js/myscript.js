@@ -122,8 +122,8 @@ $("#surname").keypress(function(e){
 });
 
 function validate() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var username = document.getElementById("userName").value;
+    var password = document.getElementById("password1").value;
     if (username == null || username == "") {
         alert("Please enter the username.");
         return false;

@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
     "database",
-    "form_validation",'javascript'
+    "form_validation",'javascript','encryption', 'session'
 );
 
 /*
@@ -94,7 +94,10 @@ $autoload['drivers'] = array();
 */
 $autoload['helper'] = array(
     'url',
-    'form'
+    'form',
+    'cookie',
+    'date'
+    
 );
 
 /*
