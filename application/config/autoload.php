@@ -60,12 +60,8 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
     "database",
-<<<<<<< HEAD
-    "form_validation",'javascript','encryption', 'session'
-=======
-
+   'encryption', 'session',
     "form_validation","javascript"
->>>>>>> 84c5ecfddc325b2d47f6bcdd0177a3634f6425ae
 );
 
 /*

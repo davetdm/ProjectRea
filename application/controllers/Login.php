@@ -31,9 +31,9 @@ class Login extends CI_Controller {
                 'password'  => $password,
                 'is_online' => TRUE
             );
-            echo "login successful";
+           // echo "login successful";
            $this->session->set_userdata($sesdata);
-           redirect('home');
+           redirect('dashboard');
        
         }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
@@ -41,5 +41,22 @@ class Login extends CI_Controller {
     }
          print_r($sesdata);
     }
-    
+    public function dash_board($page = 'dashboard'){
+       // $data['title'] = ucfirst("dashboard");
+       // $data["assets"] = $this->config->item('assets');
+        //$data['users'] = $this->WelcomeModel->getUser_Login(); 
+        //$this->load->view("dashboard", $data);
+        $id = $this->input->get('id');
+        $result = $this->WelcomeModel->user_Login($id);
+        $data = [
+            "title" => "Dashboard",
+            "assets" => $this->config->item('assets'),
+            "result" => $result
+        ];
+       // $this->load->view("dashboard", $data);
+    }
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('login');
+    }
 }

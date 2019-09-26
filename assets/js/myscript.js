@@ -95,7 +95,8 @@ $('#registerForm').submit(function(){
         url: url,
         data: data,
         success: function(response){
-            alert(response);
+            console.log(response);
+            alert('Registration successful');
             window.location.reload();
         }
     });
