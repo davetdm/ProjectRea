@@ -61,7 +61,7 @@ $autoload['packages'] = array();
 $autoload['libraries'] = array(
     "database",
    'encryption', 'session',
-    "form_validation","javascript"
+    "form_validation","javascript","cart"
 );
 
 /*

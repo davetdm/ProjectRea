@@ -33,7 +33,7 @@ class Login extends CI_Controller {
             );
            // echo "login successful";
            $this->session->set_userdata($sesdata);
-           redirect('dashboard');
+           redirect('login/dash_board');
        
         }else{
         echo $this->session->set_flashdata('msg','Username or Password is Wrong');
@@ -44,19 +44,38 @@ class Login extends CI_Controller {
     public function dash_board($page = 'dashboard'){
        // $data['title'] = ucfirst("dashboard");
        // $data["assets"] = $this->config->item('assets');
-        //$data['users'] = $this->WelcomeModel->getUser_Login(); 
+        //$data['users'] = $this->WelcomeModel->dashboard(); 
         //$this->load->view("dashboard", $data);
         $id = $this->input->get('id');
-        $result = $this->WelcomeModel->user_Login($id);
+        $result = $this->WelcomeModel->dashboard($id);
         $data = [
             "title" => "Dashboard",
             "assets" => $this->config->item('assets'),
-            "result" => $result
+            "users" => $result
         ];
-       // $this->load->view("dashboard", $data);
+        $this->load->view("dashboard", $data);
     }
     public function logout(){
         $this->session->sess_destroy();
         redirect('login');
     }
+    public function forgotPass()
+    {
+        $email = $this->input->post('email');
+       // $result = $this->WelcomeModel->forgotPassword($email);
+        $data = [
+            "title" => "Forgot Password",
+            "assets" => $this->config->item('assets'),
+          //  "users" => $result
+        ];
+        $this->load->view('forgot_password', $data);
+        
+       // if ($result) {
+       // $this->WelcomeModel->sendpassword($result);
+       // } else {
+
+       //   $this->session->set_flashdata('msg', 'Email not found!');
+
+       // }
+    }    
 }

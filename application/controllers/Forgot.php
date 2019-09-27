@@ -17,7 +17,7 @@ class Forgot extends CI_Controller {
     public function forgotPass()
     {
         $email = $this->input->post('email');
-        $result = $this->WelcomeModel->ForgotPassword($email);
+        $result = $this->WelcomeModel->forgotPassword($email);
         $this->load->view('forgot_password');
         if ($result) {
         $this->WelcomeModel->sendpassword($result);

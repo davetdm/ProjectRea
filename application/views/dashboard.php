@@ -7,17 +7,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section class="banner-bottom py-5">
         <div class="container">
             <div class="content-grid">
-                <h2>Dashboard</h2>
+                <h1>Dashboard</h1>
                 <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">LOGO</a>
+             
+              
             </div>
             <div id="navbar" class="navbar-collapse collapse">
              
@@ -27,23 +22,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </nav>
+        <?php foreach($users  as $user){ ?>
+                   
+                    
                 <form id="dashForm" action="<?php echo base_url(); ?>login/dash_board" method="post">
                     <input name="id" type="hidden" value="<?php echo $user->id; ?>">
                     <br/>
                     <p>
-                    <h1>Welcome Back <?php echo $this->session->userdata('userName');?></h1>
-                        Name: <?php echo $user->first_name ?><br/>
-                        Username: <?php echo $user->type ?><br/>
-                        Email: <?php echo $user->email ?><br/>
-                       
+                    <h2>Welcome Back <?php echo $this->session->userdata('userName');?></h2>
                     </p>
                     <br/>
                     <h4></h4>
                     <div class="content-input-field">                         
-                        <button type="submit"  class="btn btn-primary btn-lg"></button></a> 
+                       
                     </div>
                 </form>
-                
+                <?php }; ?>
             </div>
         </div>
  </section>
