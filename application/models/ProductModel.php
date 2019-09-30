@@ -32,7 +32,6 @@ class ProductModel extends CI_Model
        
      public function update($id, $data)
      {
-
       $data=array(
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
@@ -48,19 +47,24 @@ class ProductModel extends CI_Model
 
       }        
 
-  }
+    }
 
-    Public function delete($id) 
-     {
+    public function delete($id) 
+    {
       $this->db->query("delete  from product where id='".$id."'");
-      }
+    }
 
-    public function saveProduct($id){
-        
-       $this->db->set('product', $data);
-        return true;
-        $this->load->view('saveForm');
-      }
-      
+    public function saveProduct($id)
+    {
+      $this->db->set('product', $data);
+      return true;
+      $this->load->view('saveForm');
+    }
  
-  }
+    public function get_all_product(){
+      $result=$this->db->get('product');
+      return $result;
+    }
+     
+} 
+ 
