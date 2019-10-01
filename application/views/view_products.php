@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <td><img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
                         <td>
                             <a href="<?php echo base_url(); ?>product/editProduct?id=<?php echo $product->id; ?>" ><i class="fa fa-edit"></i></a>
-                            <a href="<?php echo base_url(); ?>product/deleteData?id=<?php echo $product->id; ?>">
+                            <a href="<?php echo base_url(); ?>product/deleteProduct?id=<?php echo $product->id; ?>">
                                 <i class="fa fa-trash-o text-danger"></i>
 
                             </a>

@@ -18,9 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php if($this->cart->total_items() > 0){ foreach($cartItems as $item){ ?>
         <tr>
             <td>
-            <img width="200" src="<?php echo base_url().'assets/images/'.$row->picture;?>">
-                <img src="<?php echo $imageURL; ?>" width="75"/>
-            </td>
+            <img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
             <td><?php echo $item["name"]; ?></td>
             <td><?php echo '$'.$item["price"].' USD'; ?></td>
             <td><?php echo $item["qty"]; ?></td>
@@ -48,10 +46,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h2>Shipping Info</h2>
             <br>
                 <div class="content-bottom">
-                    <form id="orderForm" action="<?php echo base_url(); ?>product/order"  method="post">
+                    <form id="orderForm" action="<?php echo base_url(); ?>product/orderItem"  method="post">
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="name" id="name" type="text" value="" placeholder="First Name" required="">
+                                <input name="first_name" id="name" type="text" value="" placeholder="First Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
@@ -66,11 +64,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="phone" id="phone" type="number" value="" placeholder="Phone Number" required="" >
+                                <input name="phone_number" id="phone" type="text" value="" placeholder="Phone Number" required="" >
                             </div>
                         </div>
                         <div class="footBtn">
-                     <a href="<?php echo base_url('cart/'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Back to Cart</a>
+                     <a href="<?php echo base_url('product/shoppingcart'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Back to Cart</a>
                  <button type="submit" name="placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon glyphicon-menu-right"></i></button>
                  </div>    
                 </form>

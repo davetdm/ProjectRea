@@ -57,11 +57,7 @@ class Product extends CI_Controller {
            'name'=>$this->input->post('name'),
            'color'=>$this->input->post('color'),
            'price'=>$this->input->post('price'),
-<<<<<<< HEAD
-           'picture'=>$this->input->post('picture'),
-=======
            'picture'=>$this->input->post('picture')
->>>>>>> b9388dbbe601ee78fa1485b3501c8dda0dcda19f
            );
           // print_r($data);
        $result = $this->ProductModel->addProduct($data);
@@ -80,11 +76,7 @@ class Product extends CI_Controller {
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
-<<<<<<< HEAD
-        'picture'=>$this->input->post('picture'),
-=======
         'picture'=>$this->input->post('picture')
->>>>>>> b9388dbbe601ee78fa1485b3501c8dda0dcda19f
         );
         $result = $this->ProductModel->saveProduct($data);
        
@@ -107,31 +99,48 @@ class Product extends CI_Controller {
     {
        $this-> viewProducts();
     }
-    
-    function addToCart($proID){
-        
-        // Fetch specific product by ID
-        $product = $this->product->getProducts($proID);
-        
-        // Add product to the cart
-        $data = array(
-            'id'    => $product['id'],
-            'qty'    => 1,
-            'price'    => $product['price'],
-            'name'    => $product['name'],
-            'image' => $product['image']
-        );
-        $this->cart->insert($data);
-        
-        // Redirect to the cart page
-        redirect('cart/');
-    }
+  
     public function checkout(){
         $data['title'] = ucfirst("Check-out");
         $data["assets"] = $this->config->item('assets');
         $data['cartItems'] = $this->ProductModel->getItems(); 
         $this->load->view("checkout", $data);
+        
    }
+   public function shoppingCart(){
+    $data['title'] = ucfirst("Shopping Cart");
+    $data["assets"] = $this->config->item('assets');
+    $data['products'] = $this->ProductModel->getProducts(); 
+    $this->load->view("cart_view", $data);
+    
+}
+public function orderItem()
+{
+    $data=array(
+        'id'=>$this->input->post('id'),
+        'first_name'=>$this->input->post('first_name'),
+        'surname'=>$this->input->post('surname'),
+        'email'=>$this->input->post('email'),
+        'phone_number'=>$this->input->post('phone_number')
+        );
+     
+    $result = $this->ProductModel->orderItem($data);
+    if ($result == true){
+        echo "Thank you.. please call again!";
+    } else {
+        var_dump($result);
+    }
+    redirect (base_url()."Product/order");
+}
+
+public function order(){
+    $data['title'] = ucfirst("Order");
+    $data["assets"] = $this->config->item('assets');
+    $data['cartItems'] = $this->ProductModel->getItems(); 
+    $this->load->view("feedback", $data);
+    
+}
+
 
 }
    

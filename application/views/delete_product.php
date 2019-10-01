@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         Name: <?php echo $product->name ?><br/>
                         Price: R<?php echo $product->price ?><br/>
                         Color: <?php echo $product->color ?><br/>
-                        <img src="<?php echo $product->picture ?>">
+                        <img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60">
                     </p>
                     <br/>
                     <h4>Are you sure you want to delete this product?</h4>

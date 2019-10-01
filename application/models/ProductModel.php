@@ -53,34 +53,31 @@ class ProductModel extends CI_Model
       $this->db->query("delete  from product where id='".$id."'");
     }
 
-<<<<<<< HEAD
-    public function saveProduct($id){
-        
-       $this->db->set('product', $data);
-        return true;
-        $this->load->view('saveForm');
-      }
-
-      function getItems()
-      {
-          $this->db->select("id, name,color,price,quantity"); 
-          $this->db->from('order_item');
-          $query = $this->db->get();
-          return $query->result();
-       }
-=======
     public function saveProduct($id)
     {
       $this->db->set('product', $data);
       return true;
       $this->load->view('saveForm');
     }
->>>>>>> b9388dbbe601ee78fa1485b3501c8dda0dcda19f
  
     public function get_all_product(){
       $result=$this->db->get('product');
       return $result;
     }
-     
+    
+     function getItems()
+     {
+         $this->db->select("id, name,price,quantity"); 
+         $this->db->from('order_item');
+         $query = $this->db->get();
+         return $query->result();
+      }
+      public function orderItem($data)
+      {
+        $this->db->insert('users', $data);
+        return true;
+        $this->load->view('orderForm');
+      }
+      
 } 
  

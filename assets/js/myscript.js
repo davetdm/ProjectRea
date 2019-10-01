@@ -203,7 +203,7 @@ function validatePhone(fld) {
     }
     return true;
 }
-    $('#saveForm').submit(function() {
+ $('#saveForm').submit(function() {
 
     var url = $('#saveForm').attr("action");
     var method = $('#saveForm').attr("method");
@@ -238,7 +238,25 @@ $(document).ready(function(){
     });
 });
 
-//cart 
+$('#orderForm').submit(function() {
+
+    var url = $('#orderForm').attr("action");
+    var method = $('#orderForm').attr("method");
+    var data = $('#orderForm').serialize();
+
+    $.ajax({
+        url: url,
+        method: method,
+        data: data,
+        success: function (resp) {
+            console.log(resp);
+            alert("Thank you.. please call again!");
+            window.location.reload();
+        }
+    });
+    return false;
+
+});
    
 
 
