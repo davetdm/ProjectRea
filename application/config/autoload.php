@@ -60,12 +60,7 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
     "database",
-<<<<<<< HEAD
-    "form_validation",'javascript','encryption', 'session'
-=======
-
-    "form_validation","javascript"
->>>>>>> 84c5ecfddc325b2d47f6bcdd0177a3634f6425ae
+    "form_validation",'javascript','encryption', 'session','cart'
 );
 
 /*
@@ -148,6 +143,6 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-    "WelcomeModel"
+    "WelcomeModel","ProductModel"
 );
 

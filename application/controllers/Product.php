@@ -6,7 +6,7 @@ class Product extends CI_Controller {
     public function __construct()
     {
     parent::__construct();
-    
+    $this->load->library('cart');
     $this->load->model('ProductModel');
     }
     
@@ -15,6 +15,7 @@ class Product extends CI_Controller {
        $data['title'] = ucfirst($page);
        $data["assets"] = $this->config->item('assets');
        $this->load->view($page, $data);
+       
        //$this->load->view('content', $data);
        //$this->load->view("myscript");
    }
@@ -56,7 +57,7 @@ class Product extends CI_Controller {
            'name'=>$this->input->post('name'),
            'color'=>$this->input->post('color'),
            'price'=>$this->input->post('price'),
-          
+           'picture'=>$this->input->post('picture'),
            );
           // print_r($data);
        $result = $this->ProductModel->addProduct($data);
@@ -75,6 +76,7 @@ class Product extends CI_Controller {
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
+        'picture'=>$this->input->post('picture'),
         );
         $result = $this->ProductModel->saveProduct($data);
        
@@ -98,5 +100,30 @@ class Product extends CI_Controller {
        $this-> viewProducts();
     }
     
+    function addToCart($proID){
+        
+        // Fetch specific product by ID
+        $product = $this->product->getProducts($proID);
+        
+        // Add product to the cart
+        $data = array(
+            'id'    => $product['id'],
+            'qty'    => 1,
+            'price'    => $product['price'],
+            'name'    => $product['name'],
+            'image' => $product['image']
+        );
+        $this->cart->insert($data);
+        
+        // Redirect to the cart page
+        redirect('cart/');
+    }
+    public function checkout(){
+        $data['title'] = ucfirst("Check-out");
+        $data["assets"] = $this->config->item('assets');
+        $data['cartItems'] = $this->ProductModel->getItems(); 
+        $this->load->view("checkout", $data);
+   }
+
 }
    

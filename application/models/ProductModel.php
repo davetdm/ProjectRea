@@ -45,7 +45,6 @@ class ProductModel extends CI_Model
       }else{
           $this->db->where('id',$id);
           return $this->db->update('product',$data);
-
       }        
 
   }
@@ -61,6 +60,13 @@ class ProductModel extends CI_Model
         return true;
         $this->load->view('saveForm');
       }
-      
+
+      function getItems()
+      {
+          $this->db->select("id, name,color,price,quantity"); 
+          $this->db->from('order_item');
+          $query = $this->db->get();
+          return $query->result();
+       }
  
   }

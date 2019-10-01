@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <td> <?php echo $product->name; ?></td>
                         <td><?php echo  $product->color;?></td>
                         <td><?php echo  $product->price; ?></td>
-                        <td><img src="<?php echo $product->picture;?>" height="40" width="60"></td>
+                        <td><img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
                         <td>
                             <a href="<?php echo base_url(); ?>product/editProduct?id=<?php echo $product->id; ?>" ><i class="fa fa-edit"></i></a>
                             <a href="<?php echo base_url(); ?>product/deleteProduct?id=<?php echo $product->id; ?>">
@@ -36,7 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php }; ?>
                 </tbody>          
             </table>
-
+            <a href="<?php echo base_url(); ?>product/index">Back to Add Products</a>
+            </div>
         </div>
     </div>
 </section>
