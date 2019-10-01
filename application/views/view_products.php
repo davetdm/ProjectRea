@@ -36,7 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php }; ?>
                 </tbody>          
             </table>
-
+            <a href="<?php echo base_url(); ?>product/index">Back to Add Products</a>
+            </div>
         </div>
     </div>
 </section>

@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="picture" id="image" type="text" value="" placeholder="Product Image" required="">
+                                <input name="picture" id="picture" type="text" value="" placeholder="Product Image" required="" >
                             </div>
                         </div>
                         <div class="content-input-field">                         
