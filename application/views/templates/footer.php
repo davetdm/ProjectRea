@@ -27,7 +27,7 @@
                 </div>
                 <div class="icon-gd-info">
                     <h3>FREE SHIPPING</h3>
-                    <p>On all order over $2000</p>
+                    <p>On all order over R2000</p>
                 </div>
             </div>
             <div class="col-lg-4 shiopping-w3pvt-gd sec text-center">
@@ -41,7 +41,7 @@
                 <div class="icon-gd"> <span class="fa fa-gift" aria-hidden="true"></span></div>
                 <div class="icon-gd-info">
                     <h3>MEMBER DISCOUNT</h3>
-                    <p>Register &amp; save up to $29%</p>
+                    <p>Register &amp; save up to R29%</p>
                 </div>
 
             </div>
@@ -134,9 +134,9 @@
 
     </div>
     <!-- //copyright -->
-    <script type="" src="<?php echo base_url() . "assets/js/jquery-3.4.1.min.js" ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url() . "assets/js/jquery-3.4.1.min.js" ?>"></script>
     <script type = 'text/javascript' src = "<?php echo base_url()."assets/js/myscript.js"; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.4.1.min.js'?>"></script>
+    <!--<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-3.4.1.min.js'?>"></script>-->
     <script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
     </body>
 </html>
