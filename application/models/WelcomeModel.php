@@ -30,4 +30,17 @@ class WelcomeModel extends CI_Model {
     $result = $this->db->get('users',1);
     return $result;
   }
+  public function dashboard($id)
+  {
+    $this->db->select("*"); 
+    $this->db->where('id = 1');
+    //$this->db->where('id', $id);
+    $query = $this->db->get("users");
+    return $query->result();
+  }
+  public function forgot_pass(){
+
+    
+  }
+ 
 }

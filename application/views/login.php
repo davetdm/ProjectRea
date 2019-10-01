@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </label>
                           </li>
                           <li>
-                              <a href="forgot_password" class="text-right">Forgot password?</a>
+                              <a href="login/forgotPass" class="text-right">Forgot password?</a>
                          </li>
                           <li class="clearfix"></li>
                      </ul>

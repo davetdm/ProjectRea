@@ -57,7 +57,11 @@ class Product extends CI_Controller {
            'name'=>$this->input->post('name'),
            'color'=>$this->input->post('color'),
            'price'=>$this->input->post('price'),
+<<<<<<< HEAD
            'picture'=>$this->input->post('picture'),
+=======
+           'picture'=>$this->input->post('picture')
+>>>>>>> b9388dbbe601ee78fa1485b3501c8dda0dcda19f
            );
           // print_r($data);
        $result = $this->ProductModel->addProduct($data);
@@ -76,7 +80,11 @@ class Product extends CI_Controller {
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
+<<<<<<< HEAD
         'picture'=>$this->input->post('picture'),
+=======
+        'picture'=>$this->input->post('picture')
+>>>>>>> b9388dbbe601ee78fa1485b3501c8dda0dcda19f
         );
         $result = $this->ProductModel->saveProduct($data);
        
