@@ -61,7 +61,7 @@ class ProductModel extends CI_Model
       $this->load->view('saveForm');
     }
  
-    public function get_all_product(){
+    public function get_product(){
       $result=$this->db->get('product');
       return $result;
     }

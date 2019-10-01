@@ -20,16 +20,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="thumbnail">
                         <img width="200" src="<?php echo base_url().'assets/images/'.$row->picture;?>">
                         <div class="caption">
-                            <h4><?php echo $row->name;?></h4>
+                            <h6><?php echo $row->name;?></h6>
+                            <h6>(<?php echo $row->color;?>)</h6>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h4><?php echo number_format($row->price);?></h4>
-                                </div><br />
+                                    <h6>R<?php echo ($row->price);?>.00</h6>
+                                </div>
                                 <div class="col-md-5">
                                     <input type="number" name="quantity" id="<?php echo $row->id;?>" value="1" class="quantity form-control">
                                 </div>
                             </div>
-                            <button class="add_cart btn btn-success btn-block" data-id="<?php echo $row->id;?>" data-name="<?php echo $row->name;?>" data-productprice="<?php echo $row->price;?>" data-productcolor="<?php echo $row->color;?>">Add To Cart</button>
+                            <button class="add_cart btn btn-success btn-block" data-id="<?php echo $row->id;?>" data-name="<?php echo $row->name;?>" data-price="<?php echo $row->price;?>" data-color="<?php echo $row->color;?>">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -58,44 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
- 
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.add_cart').click(function(){
-            var id    = $(this).data("id");
-            var name  = $(this).data("name");
-            var color = $(this).data("color");
-            var price = $(this).data("price");
-            var quantity      = $('#' + id).val();
-            $.ajax({
-                url : "<?php echo site_url('cart/add_to_cart');?>",
-                method : "POST",
-                data : {id: id, name: name, price: price,color: color, quantity: quantity},
-                success: function(data){
-                    $('#detail_cart').php(data);
-                }
-            });
-        });
- 
-         
-        $('#detail_cart').load("<?php echo site_url('cart/load_cart');?>");
- 
-         
-        $(document).on('click','.romove_cart',function(){
-            var row_id=$(this).attr("id"); 
-            $.ajax({
-                url : "<?php echo site_url('cart/delete_cart');?>",
-                method : "POST",
-                data : {row_id : row_id},
-                success :function(data){
-                    $('#detail_cart').php(data);
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>
-
 <?php require_once "templates/footer.php"; ?>

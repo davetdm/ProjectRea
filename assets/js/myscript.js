@@ -233,12 +233,43 @@ $(document).ready(function(){
         else 
         { 
             return false
-        }
-       
+        }       
     });
 });
 
 //cart 
+
+$(document).ready(function(){
+    $('.add_cart').click(function(){
+        var id    = $(this).data("id");
+        var name  = $(this).data("name");
+        //var color = $(this).data("color");
+        var price = $(this).data("price");
+        var quantity = $('#' + id).val();
+        $.ajax({
+            url : "<?php echo site_url('cart/add_to_cart');?>",
+            method : "POST",
+            data : {id: id, name: name, price: price,quantity: quantity},
+            success: function(data){
+                $('#detail_cart').html(data);
+            }
+        });
+    });
    
+    $('#detail_cart').load("<?php echo site_url('cart/load_cart');?>");
+  
+    $(document).on('click','.remove_cart',function(){
+        var row_id=$(this).attr("id"); 
+        $.ajax({
+            url : "<?php echo site_url('cart/delete_cart');?>",
+            method : "POST",
+            data : {row_id : row_id},
+            success :function(data){
+                $('#detail_cart').html(data);
+            }
+        });
+    });
+});
+
 
 
