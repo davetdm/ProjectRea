@@ -13,18 +13,18 @@ class Cart extends CI_Controller{
       $data["assets"] = $this->config->item('assets');
       $data['data']=$this->ProductModel->get_product();
       $this->load->view('cart_view',$data);
-     }
+    }
   
     public function add_to_cart()
     { 
-        $data = array(
-         'id'=>$this->input->post('id'),
-         'name'=>$this->input->post('name'),
-         //'color'=>$this->input->post('color'),
-         'price'=>$this->input->post('price'),
-         //'picture'=>$this->input->post('picture'), 
-         'qty' => $this->input->post('quantity'), 
-         );
+      $data = array(
+        'id'=>$this->input->post('id'),
+        'name'=>$this->input->post('name'),
+        //'color'=>$this->input->post('color'),
+        'price'=>$this->input->post('price'),
+        //'picture'=>$this->input->post('picture'), 
+        'qty' => $this->input->post('quantity'), 
+        );
         $this->cart->insert($data);
         echo $this->show_cart(); 
     }
@@ -55,9 +55,8 @@ class Cart extends CI_Controller{
     }
     public function load_cart()
     { 
-        echo $this->show_cart();
-    }
-  
+      echo $this->show_cart();
+    } 
     public function delete_cart()
     { 
       $data = array(

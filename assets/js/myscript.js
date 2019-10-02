@@ -239,7 +239,8 @@ $(document).ready(function(){
 
 //cart 
 
-$(document).ready(function(){
+$(document).ready(function()
+{
     $('.add_cart').click(function(){
         var id    = $(this).data("id");
         var name  = $(this).data("name");
@@ -247,7 +248,7 @@ $(document).ready(function(){
         var price = $(this).data("price");
         var quantity = $('#' + id).val();
         $.ajax({
-            url : "<?php echo site_url('cart/add_to_cart');?>",
+            url : $(this).data("url"),
             method : "POST",
             data : {id: id, name: name, price: price,quantity: quantity},
             success: function(data){

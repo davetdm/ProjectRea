@@ -30,7 +30,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input type="number" name="quantity" id="<?php echo $row->id;?>" value="1" class="quantity form-control">
                                 </div>
                             </div>
-                            <button class="add_cart btn btn-success btn-block" data-id="<?php echo $row->id;?>" data-name="<?php echo $row->name;?>" data-price="<?php echo $row->price;?>" data-color="<?php echo $row->color;?>">Add To Cart</button>
+                            <button class="add_cart btn btn-success btn-block" 
+                                data-id="<?php echo $row->id;?>" 
+                                data-name="<?php echo $row->name;?>" 
+                                data-price="<?php echo $row->price;?>"
+                                data-color="<?php echo $row->color;?>"
+                                data-url="<?php echo base_url() . "cart/add_to_cart"; ?>">
+                                Add To Cart
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -51,7 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="detail_cart">
+                <tbody id="detail_cart"
+                data-url="<?php echo base_url() . "cart/load_cart"; ?>">
  
                 </tbody>
                  
