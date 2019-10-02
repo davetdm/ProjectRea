@@ -41,7 +41,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </section>
-    <!-- /banner-bottom -->
-    
- 
 <?php require_once "templates/footer.php"; ?>

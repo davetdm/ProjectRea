@@ -79,5 +79,6 @@ class ProductModel extends CI_Model
         $this->load->view('orderForm');
       }
       
+      
 } 
  

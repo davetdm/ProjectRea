@@ -7,10 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <table class="table" style="color: #000000">
                 <thead>
                     <tr>
-                        <th>Product</th>
+                        <th>Items</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Total</th>
+                        <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,10 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <tr>
             <td>
             <img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
-            <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
+            <td><?php echo $item["item"]; ?></td>
+            <td><?php echo '$'.$item["price"].' R'; ?></td>
             <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo '$'.$item["subtotal"].' R'; ?></td>
         </tr>
         <?php } }else{ ?>
         <tr>
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td colspan="4"></td>
             <?php if($this->cart->total_items() > 0){ ?>
             <td class="text-center">
-                <strong>Total <?php echo '$'.$this->cart->total().' USD'; ?></strong>
+                <strong>Total <?php echo 'R'.$this->cart->total(); ?></strong>
             </td>
             <?php } ?>
         </tr>

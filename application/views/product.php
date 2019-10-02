@@ -9,6 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="content-grid">
             <h2> Products</h2>
             <br>
+            <div class="text-center icon">
+            <img src="<?php echo base_url($assets."/images/b3.jpg") ?>" alt="part image" class="img-fluid">
+          </div>
                 <div class="content-bottom">
                     <form id="productForm" action="<?php echo base_url(); ?>product/addProduct"  method="post">
                         <div class="field-group">
