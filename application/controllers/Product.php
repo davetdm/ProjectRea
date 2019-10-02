@@ -90,23 +90,7 @@ class Product extends CI_Controller {
     {
        $this-> viewProducts();
     }   
-    public function addToCart($proID)
-    {        
-     // Fetch specific product by ID
-     $product = $this->product->getProducts($proID);    
-        // Add product to the cart
-     $data = array(
-     'id' => $product['id'],
-     'qty'    => 1,
-     'price'    => $product['price'],
-     'name'    => $product['name'],
-     'image' => $product['image']
-        );
-        $this->cart->insert($data);
-        
-        // Redirect to the cart page
-        redirect('cart/');
-    }
+    
     public function checkout()
     {
      $data['title'] = ucfirst("Check-out");

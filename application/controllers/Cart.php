@@ -20,9 +20,9 @@ class Cart extends CI_Controller{
       $data = array(
         'id'=>$this->input->post('id'),
         'name'=>$this->input->post('name'),
-        //'color'=>$this->input->post('color'),
+        'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
-        //'picture'=>$this->input->post('picture'), 
+        'picture'=>$this->input->post('picture'), 
         'qty' => $this->input->post('quantity'), 
         );
         $this->cart->insert($data);
@@ -35,7 +35,7 @@ class Cart extends CI_Controller{
       foreach ($this->cart->contents() as $items)
       {
         $no++; 
-        $output ='
+        $output = '
             <tr>
               <td>'.$items['name'].'</td>
              <td>'.($items['price']).'</td>
@@ -43,14 +43,13 @@ class Cart extends CI_Controller{
              <td>'.($items['subtotal']).'</td>
              <td><button type="button" id="'.$items['rowid'].'" class="remove_cart btn btn-danger btn-sm">Remove</button></td>
             </tr>
-            ';
-        }
-        $output = '
             <tr>
              <th colspan="3">Total</th>
              <th colspan="2">'.'R '.($this->cart->total()).'</th>
             </tr>
-        ';
+            ';
+        }
+        
         return $output;
     }
     public function load_cart()
