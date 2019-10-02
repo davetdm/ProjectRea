@@ -237,7 +237,6 @@ $(document).ready(function(){
     });
 });
 
-<<<<<<< HEAD
 $('#orderForm').submit(function() {
 
     var url = $('#orderForm').attr("action");
