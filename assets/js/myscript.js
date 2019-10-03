@@ -242,7 +242,7 @@ $('#orderForm').submit(function() {
     var url = $('#orderForm').attr("action");
     var method = $('#orderForm').attr("method");
     var data = $('#orderForm').serialize();
-
+ // print_r($data);
     $.ajax({
         url: url,
         method: method,
