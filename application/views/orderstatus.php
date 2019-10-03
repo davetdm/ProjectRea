@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-sm-6 info">
         <div class="hdr">Order Info</div>
         <p><b>Reference ID</b> #<?php echo $item['id']; ?></p>
-        <p><b>Total</b> <?php echo '$'.$item['Total'].' R'; ?></p>
+        <p><b>Total</b> <?php echo 'R'.$item['Total'].' R'; ?></p>
     </div>
 </div>
 
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="col-sm-4">
             <p><b><?php echo $item["name"]; ?></b></p>
-            <p><?php echo '$'.$item["price"].' R'; ?></p>
+            <p><?php echo 'R'.$item["price"].' R'; ?></p>
             <p>QTY: <?php echo $item["quantity"]; ?></p>
         </div>
         <div class="col-sm-2">

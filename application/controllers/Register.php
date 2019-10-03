@@ -28,7 +28,7 @@ class Register extends CI_Controller {
             'password'=>Sha1($this->input->post($this->salt.'password1')),
             'phone_number'=>$this->input->post('phone_number')
             );
-            print_r($data);
+           // print_r($data);
         $result = $this->WelcomeModel->registerUser($data);
         if ($result == true){
             echo "registration successful";

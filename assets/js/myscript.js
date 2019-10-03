@@ -104,6 +104,26 @@ $('#registerForm').submit(function(){
     return false;
 });
 
+$('#forgotForm').submit(function(){
+
+    var url = $('#forgotForm').attr("action");
+    var method = $('#forgotForm').attr("method");
+    var data = $('#forgotForm').serialize();
+
+    $.ajax({
+        type: method,
+        url: url,
+        data: data,
+        success: function(response){
+            console.log(response);
+            alert('Rest successful');
+            window.location.reload();
+        }
+    });
+
+    return false;
+});
+
 $("#first_name").keypress(function(d){
     var input = d.which;
     if(!(input >= 65 && input <= 120) && (input != 32 && input != 0)) {
@@ -134,7 +154,6 @@ function validate() {
         return false;
     }
     alert('Login successful');
-
 } 
 
 $('#productForm').submit(function() {
@@ -185,18 +204,18 @@ function validatePhone(fld) {
     var stripped = fld.value.replace(/[\(\)\.\-\ ]/g, '');
  
    if (fld.value == "") {
-        error = "You didn't enter a phone number.\n";
+        error = "You didn't enter a phone number";
         fld.style.background = 'Yellow';
         alert(error);
 		return false;
  
     } else if (isNaN(parseInt(stripped))) {
-        error = "The phone number contains illegal characters. Don't include dash (-)\n";
+        error = "The phone number contains illegal characters";
        // fld.style.background = 'Yellow';
         alert(error);
 		return false;
     } else if (!(stripped.length == 10)) {
-        error = "The phone number is the wrong length. Make sure you included an area code. Don't include dash (-)\n";
+        error = "The phone number is the wrong length. Make sure you included an area code";
         fld.style.background = 'Yellow';
         alert(error);
 		return false;
