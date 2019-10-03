@@ -31,7 +31,7 @@ class Cart extends CI_Controller{
     public function show_cart()
     { 
      // $this->output = '';
-      $no = 0;
+     // $no = 0;
       foreach ($this->cart->contents() as $items)
       {
        // $no++; 
@@ -50,7 +50,7 @@ class Cart extends CI_Controller{
         
             <tr>
              <th colspan="3">Total</th>
-             <th colspan="2">'.'R '.($this->cart->total()).'</th>
+             <th colspan="2">'.'R '.($this->cart->total()).' </th>
             </tr>
         ';
         //return $output;
