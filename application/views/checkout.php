@@ -7,24 +7,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <table class="table" style="color: #000000">
                 <thead>
                     <tr>
-                        <th>Product</th>
+                        <th>Items</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Total</th>
+                        <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
     <tbody>
-        <?php if($this->cart->total_items() > 0){ foreach($cartItems as $item){ ?>
+        <?php if($this->cart->total_items() > 0){  foreach ($this->cart->contents() as $items){ ?>
         <tr>
-            <td>
-            <img width="200" src="<?php echo base_url().'assets/images/'.$row->picture;?>">
-                <img src="<?php echo $imageURL; ?>" width="75"/>
-            </td>
-            <td><?php echo $item["name"]; ?></td>
-            <td><?php echo '$'.$item["price"].' USD'; ?></td>
-            <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
+            <td><?php echo $items["name"]; ?></td>
+            <td><?php echo 'R'.$items["price"].' '; ?></td>
+            <td><?php echo $items["qty"]; ?></td>
+            <td><?php echo 'R'.$items["subtotal"].' '; ?></td>
         </tr>
         <?php } }else{ ?>
         <tr>
@@ -37,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td colspan="4"></td>
             <?php if($this->cart->total_items() > 0){ ?>
             <td class="text-center">
-                <strong>Total <?php echo '$'.$this->cart->total().' USD'; ?></strong>
+                <strong>Total <?php echo 'R'.$this->cart->total(); ?></strong>
             </td>
             <?php } ?>
         </tr>
@@ -48,10 +44,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h2>Shipping Info</h2>
             <br>
                 <div class="content-bottom">
-                    <form id="orderForm" action="<?php echo base_url(); ?>product/order"  method="post">
+                    <form id="orderForm" action="<?php echo base_url(); ?>product/orderItem"  method="post">
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="name" id="name" type="text" value="" placeholder="First Name" required="">
+                                <input name="first_name" id="name" type="text" value="" placeholder="First Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
@@ -66,11 +62,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="phone" id="phone" type="number" value="" placeholder="Phone Number" required="" >
+                                <input name="phone_number" id="phone" type="text" value="" placeholder="Phone Number" required="" >
                             </div>
                         </div>
                         <div class="footBtn">
-                     <a href="<?php echo base_url('cart/'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Back to Cart</a>
+                     <a href="<?php echo base_url('cart'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Back to Cart</a>
                  <button type="submit" name="placeOrder" class="btn btn-success orderBtn">Place Order <i class="glyphicon glyphicon-menu-right"></i></button>
                  </div>    
                 </form>

@@ -16,12 +16,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h5>Rs. 499 <span>599</span> <a href="#">Click for offer</a></h5>
                         <div class="available mt-3">
                             <form action="#" method="post" class="w3pvt-newsletter subscribe-sec">
-                                <input type="email" name="Email" placeholder="Enter your email..." required="">
-                                <button class="btn submit">Check</button>
-
+                            <p>Love it? Please login and enjoy your shopping.. </p>
+                            <a href="<?php echo base_url('login'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Login</a>
                             </form>
-                            <span><a href="login">login to save in wishlist </a></span>
-                            <p>Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
+                            
                         </div>
                         <div class="share-desc mt-5">
                             <div class="share text-left">

@@ -14,15 +14,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="row col-lg-12 ord-addr-info">
     <div class="col-sm-6 adr">
         <div class="hdr">Shipping Address</div>
-        <p><?php echo $order['first_name']; ?></p>
-        <p><?php echo $order['surname']; ?></p>
-        <p><?php echo $order['email']; ?></p>
-        <p><?php echo $order['phone']; ?></p>
+        <p><?php echo $users['first_name']; ?></p>
+        <p><?php echo $users['surname']; ?></p>
+        <p><?php echo $users['email']; ?></p>
+        <p><?php echo $users['phone_number']; ?></p>
     </div>
     <div class="col-sm-6 info">
         <div class="hdr">Order Info</div>
-        <p><b>Reference ID</b> #<?php echo $order['id']; ?></p>
-        <p><b>Total</b> <?php echo '$'.$order['grand_total'].' USD'; ?></p>
+        <p><b>Reference ID</b> #<?php echo $item['id']; ?></p>
+        <p><b>Total</b> <?php echo '$'.$item['Total'].' R'; ?></p>
     </div>
 </div>
 
@@ -33,17 +33,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-sm-2">
             <div class="img" style="height: 75px; width: 75px;">
             <td>
-            <img width="200" src="<?php echo base_url().'assets/images/'.$row->picture;?>">
-                <img src="<?php echo $picture; ?>" width="75"/>
+            <img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
             </div>
         </div>
         <div class="col-sm-4">
             <p><b><?php echo $item["name"]; ?></b></p>
-            <p><?php echo '$'.$item["price"].' USD'; ?></p>
+            <p><?php echo '$'.$item["price"].' R'; ?></p>
             <p>QTY: <?php echo $item["quantity"]; ?></p>
         </div>
         <div class="col-sm-2">
-            <p><b><?php echo '$'.$item["sub_total"].' USD'; ?></b></p>
+            <p><b><?php echo 'R'.$item["sub_total"].' R'; ?></b></p>
         </div>
     </div>
     <?php } } ?>
