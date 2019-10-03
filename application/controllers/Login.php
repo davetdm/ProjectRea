@@ -47,6 +47,12 @@ class Login extends CI_Controller {
        // $data["assets"] = $this->config->item('assets');
         //$data['users'] = $this->WelcomeModel->dashboard(); 
         //$this->load->view("dashboard", $data);
+        $data = [
+            "title" => ucfirst("Dashboard"),
+            "assets" => $this->config->item('assets'),
+            "page" => "dashboard",
+           
+        ];
         $id = $this->input->get('id');
         $result = $this->WelcomeModel->dashboard($id);
         $data = [
