@@ -30,12 +30,12 @@
                         </div>
                         <?php if($this->session->is_online){ ?>
                             <div class="forms ml-auto">
-                                <a href="<?php echo base_url(); ?>login" class="btn"><span class="fa fa-user-circle-o"></span> Profile</a>
-                                <a href="<?php echo base_url(); ?>register" class="btn"><span class="fa fa-pencil-square-o"></span> Logout</a>
+                                <a href="<?php echo base_url(); ?>login/dash_board" class="btn"><span class="fa fa-user-circle-o"></span> Profile</a>
+                                <a href="<?php echo base_url(); ?>login/logout" class="btn"><span class="fa fa-sign-out"></span> Logout</a>
                             </div>
                         <?php } else { ?>
                             <div class="forms ml-auto">
-                                <a href="<?php echo base_url(); ?>login" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
+                                <a href="<?php echo base_url(); ?>login" class="btn"><span class="fa fa-sign-in"></span> Sign In</a>
                                 <a href="<?php echo base_url(); ?>register" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
                             </div>
                         <?php } ?>

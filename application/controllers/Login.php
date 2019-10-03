@@ -54,6 +54,7 @@ class Login extends CI_Controller {
             "assets" => $this->config->item('assets'),
             "users" => $result
         ];
+        $data["page"] = "dashboard";
         $this->load->view("dashboard", $data);
     }
     public function logout(){
