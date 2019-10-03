@@ -66,7 +66,6 @@ class Product extends CI_Controller {
    public function saveProduct() 
    {
 	 $data=array(
-        'id'=>$this->input->post('id'),
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
@@ -105,7 +104,7 @@ class Product extends CI_Controller {
     $this->load->view("cart_view", $data);
     
 }
-public function orderItem()
+public function addCustomer()
 {
     $data=array(
         'id'=>$this->input->post('id'),
@@ -128,7 +127,7 @@ public function order(){
     $data['title'] = ucfirst("Order");
     $data["assets"] = $this->config->item('assets');
     $data['cartItems'] = $this->ProductModel->getItems(); 
-    $this->load->view("feedback", $data);
+    $this->load->view("billing", $data);
     
 }
 public function orderStatus(){

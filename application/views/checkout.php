@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h2>Shipping Info</h2>
             <br>
                 <div class="content-bottom">
-                    <form id="orderForm" action="<?php echo base_url(); ?>product/orderItem"  method="post">
+                    <form id="orderForm" action="<?php echo base_url(); ?>product/addCustomer"  method="post">
                         <div class="field-group">
                             <div class="content-input-field">
                                 <input name="first_name" id="name" type="text" value="" placeholder="First Name" required="">
