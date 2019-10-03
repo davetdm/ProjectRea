@@ -278,12 +278,12 @@ $(document).ready(function()
     });
 
    
-    $('#detail_cart').load("<?php echo site_url('cart/load_cart');?>");
+    $('#detail_cart').load(cart_url);
   
     $(document).on('click','.remove_cart',function(){
         var row_id=$(this).attr("id"); 
         $.ajax({
-            url : "<?php echo site_url('cart/delete_cart');?>",
+            url : carts_url,
             method : "POST",
             data : {row_id : row_id},
             success :function(data){

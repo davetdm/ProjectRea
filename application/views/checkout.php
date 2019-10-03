@@ -15,14 +15,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </thead>
                 <tbody>
     <tbody>
-        <?php if($this->cart->total_items() > 0){ foreach($cartItems as $item){ ?>
+        <?php if($this->cart->total_items() > 0){  foreach ($this->cart->contents() as $items){ ?>
         <tr>
-            <td>
-            <img src="<?php echo base_url().'assets/images/'.$product->picture;?>" height="40" width="60"></td>
-            <td><?php echo $item["item"]; ?></td>
-            <td><?php echo '$'.$item["price"].' R'; ?></td>
-            <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' R'; ?></td>
+            <td><?php echo $items["name"]; ?></td>
+            <td><?php echo 'R'.$items["price"].' '; ?></td>
+            <td><?php echo $items["qty"]; ?></td>
+            <td><?php echo 'R'.$items["subtotal"].' '; ?></td>
         </tr>
         <?php } }else{ ?>
         <tr>

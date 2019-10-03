@@ -58,9 +58,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="detail_cart"
-                data-url="<?php echo base_url() . "cart/load_cart"; ?>">
- 
+                <tbody name="detail_cart" id="detail_cart">
+                <script>let cart_url = "<?php echo base_url() . "cart/load_cart"; ?>";</script>
+                <script>let carts_url = "<?php echo base_url() . "cart/delete_cart"; ?>";</script>
                 </tbody>
                  
             </table>
