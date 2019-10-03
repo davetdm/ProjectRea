@@ -12,6 +12,7 @@ class Contact extends CI_Controller {
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "contact";
 		$this->load->view($page, $data);
 	}
 }

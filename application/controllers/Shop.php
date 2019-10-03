@@ -16,6 +16,7 @@ class Shop extends CI_Controller{
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "shop";
 		$this->load->view($page, $data);
     }
     

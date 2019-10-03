@@ -11,6 +11,7 @@ class Cart extends CI_Controller{
     {
       $data['title'] = ucfirst("Shopping Cart");
       $data["assets"] = $this->config->item('assets');
+      $data["page"] = "cart";
       $data['data']=$this->ProductModel->get_product();
       $this->load->view('cart_view',$data);
     }
@@ -67,6 +68,10 @@ class Cart extends CI_Controller{
      );
      $this->cart->update($data);
      echo $this->show_cart();
+    }
+
+    public function clear_cart(){
+      $this->cart->destroy();
     }
     
 }

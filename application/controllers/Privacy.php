@@ -12,6 +12,7 @@ class Privacy extends CI_Controller {
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "privacy";
 		$this->load->view($page, $data);
 	}
 }

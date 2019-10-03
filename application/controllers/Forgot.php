@@ -12,6 +12,7 @@ class Forgot extends CI_Controller {
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "forgot_password";
 		$this->load->view($page, $data);
     }
     public function forgotPass()

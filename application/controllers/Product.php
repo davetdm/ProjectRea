@@ -13,6 +13,7 @@ class Product extends CI_Controller {
     {
        $data['title'] = ucfirst($page);
        $data["assets"] = $this->config->item('assets');
+       $data["page"] = "product";
        $this->load->view($page, $data);     
        //$this->load->view('content', $data);
        //$this->load->view("myscript");
@@ -91,9 +92,15 @@ class Product extends CI_Controller {
     }
   
     public function checkout(){
-        $data['title'] = ucfirst("Check-out");
-        $data["assets"] = $this->config->item('assets');
-        $data['cartItems'] = $this->ProductModel->getItems(); 
+        $data = [
+            "title" => ucfirst("Check-out"),
+            "assets" => $this->config->item('assets'),
+            "page" => "checkout",
+            "cartItems" => $this->ProductModel->getItems()
+        ];
+        // $data['title'] = ucfirst("Check-out");
+        // $data["assets"] = $this->config->item('assets');
+        // $data['cartItems'] = $this->ProductModel->getItems(); 
         $this->load->view("checkout", $data);
         
    }
@@ -117,6 +124,7 @@ public function addCustomer()
     $result = $this->ProductModel->orderItem($data);
     if ($result == true){
         echo "Thank you.. please call again!";
+        $this->cart->destroy();
     } else {
         var_dump($result);
     }

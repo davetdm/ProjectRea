@@ -12,6 +12,7 @@ class Coming extends CI_Controller {
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "coming";
 		$this->load->view($page, $data);
 	}
 }

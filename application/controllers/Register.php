@@ -13,6 +13,7 @@ class Register extends CI_Controller {
 	{
         $data['title'] = ucfirst($page);
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "register";
         $this->load->view($page, $data);
         //$this->load->view("myscript");
     }
