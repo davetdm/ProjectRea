@@ -43,18 +43,15 @@ class Login extends CI_Controller {
          print_r($sesdata);
     }
     public function dash_board($page = 'dashboard'){
-       // $data['title'] = ucfirst("dashboard");
-       // $data["assets"] = $this->config->item('assets');
-        //$data['users'] = $this->WelcomeModel->dashboard(); 
-        //$this->load->view("dashboard", $data);
+       
         $id = $this->input->get('id');
         $result = $this->WelcomeModel->dashboard($id);
         $data = [
             "title" => "Dashboard",
             "assets" => $this->config->item('assets'),
+            "page" => "dashboard",
             "users" => $result
         ];
-        $data["page"] = "dashboard";
         $this->load->view("dashboard", $data);
     }
     public function logout(){
@@ -68,6 +65,7 @@ class Login extends CI_Controller {
         $data = [
             "title" => "Forgot Password",
             "assets" => $this->config->item('assets'),
+            "page" => "forgot_password",
           //  "users" => $result
         ];
         $this->load->view('forgot_password', $data);

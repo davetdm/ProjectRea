@@ -12,16 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="content-bottom">
                     <form id="registerForm" action="<?php echo site_url('register/register_user'); ?>" method="post">
                         <div class="field-group">
-                        <div class="content-input-field">
-                                <input name="first_name" id="first_name" type="text" value="" placeholder="First Name" required="">
-                            </div>
-                        </div>
-                        <div class="field-group">
-                        <div class="content-input-field">
-                                <input name="surname" id="surname" type="text" value="" placeholder="Last Name" required="">
-                            </div>
-                        </div>
-                        <div class="field-group">
 
                         <div class="content-input-field">
                                 <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">

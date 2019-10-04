@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <table class="table" style="color: #000000">
                 <thead>
                     <tr>
+                        <th>Image</td>
                         <th>Items</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -17,9 +18,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <tbody>
         <?php if($this->cart->total_items() > 0){  foreach ($this->cart->contents() as $items){ ?>
         <tr>
+            <td><img width="40" src="<?php echo base_url().'assets/images/'.$items['picture'];?>"></td> 
             <td><?php echo $items["name"]; ?></td>
             <td><?php echo 'R'.$items["price"].' '; ?></td>
-            <td><?php echo $items["qty"]; ?></td>
+            <td><?php echo $items["qty"]; ?></td>          
             <td><?php echo 'R'.$items["subtotal"].' '; ?></td>
         </tr>
         <?php } }else{ ?>
