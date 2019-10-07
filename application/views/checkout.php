@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once "templates/header.php"; ?>
 
 <h2>Order Preview</h2>
-            <table class="table" style="color: #000000">
+<div class="col-md-4">
+    <table class="table" style="color: #000000">
                 <thead>
                     <tr>
                         <th>Image</td>
@@ -14,11 +15,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <th>Subtotal</th>
                     </tr>
                 </thead>
-                <tbody>
-    <tbody>
+     <tbody>
         <?php if($this->cart->total_items() > 0){  foreach ($this->cart->contents() as $items){ ?>
         <tr>
-            <td><img width="40" src="<?php echo base_url().'assets/images/'.$items['picture'];?>"></td> 
+            <td><img src="<?php echo base_url().'assets/images/'.$items["picture"];?>" height="40" width="60"></td> 
             <td><?php echo $items["name"]; ?></td>
             <td><?php echo 'R'.$items["price"].' '; ?></td>
             <td><?php echo $items["qty"]; ?></td>          
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td colspan="5"><p>No items in your cart...</p></td>
         </tr>
         <?php } ?>
-    </tbody>
+     </tbody>
     <tfoot>
         <tr>
             <td colspan="4"></td>
@@ -41,6 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </tr>
     </tfoot>
     </table>
+    </div>
         <div class="container">
             <div class="content-grid">
             <h2>Shipping Info</h2>

@@ -71,7 +71,7 @@ class Product extends CI_Controller {
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
-        'picture'=>$this->input->post('picture')
+        'picture'=>$this->upload->data()
         );
         $result = $this->ProductModel->saveProduct($data);
        

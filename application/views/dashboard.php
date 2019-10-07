@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        
         <?php foreach($users  as $user){ ?>
 
-              <form id="dashForm" action="<?php echo base_url(); ?>login/dash_board" method="post">
+              <form id="dashForm" action="<?php echo base_url(); ?>dashboard" method="post">
                  <input name="id" type="hidden" value="<?php echo $user->id; ?>">
                    <br/>
                   <p>

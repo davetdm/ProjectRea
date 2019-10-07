@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 data-name="<?php echo $row->name;?>" 
                                 data-price="<?php echo $row->price;?>"
                                 data-color="<?php echo $row->color;?>"
+                                data-picture="<?php echo $row->picture;?>"
                                 data-url="<?php echo base_url() . "cart/add_to_cart"; ?>">
                                 Add To Cart
                             </button>

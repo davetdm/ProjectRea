@@ -31,7 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="picture" id="picture" type="text" value="" placeholder="Product Image" required="" >
+                               
+                                Image Upload:
+                                <input type="file" name="picture" id="picture" accept="image/*">
                             </div>
                         </div>
                         <div class="content-input-field">                         
