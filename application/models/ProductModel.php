@@ -13,7 +13,7 @@ class ProductModel extends CI_Model
         $this->load->view('productForm');
       }
       
-      function getProducts()
+    function getProducts()
       {
           $this->db->select("id, name,color,price, picture"); 
           $this->db->from('product');
@@ -21,7 +21,7 @@ class ProductModel extends CI_Model
           return $query->result();
        }
 
-      function singleProduct($id){
+    function singleProduct($id){
 
           $this->db->select("id, name,color,price, picture"); 
           $this->db->from('product');
@@ -30,7 +30,7 @@ class ProductModel extends CI_Model
           return $query->result()[0];
       }
        
-     public function update($id, $data)
+    public function update($id, $data)
      {
       $data=array(
         'name'=>$this->input->post('name'),
@@ -65,19 +65,31 @@ class ProductModel extends CI_Model
       return $result;
     }
     
-     function getItems()
+    function getItems()
      {
-         $this->db->select("id, name,price,quantity"); 
+         $this->db->select("id, name,quantity,price,color,picture"); 
          $this->db->from('order_item');
          $query = $this->db->get();
          return $query->result();
       }
-      public function orderItem($data)
+
+    public function orderItem($data)
       {
         $this->db->insert('users', $data);
         return true;
         $this->load->view('orderForm');
       }
-      
+
+     public function inserOrder($data)
+       {
+        $this->db->insert('orders', $data);
+        $id = $this->db->insert_id();
+        return (isset($id)) ;
+      }
+
+     public function insert_order_detail($data)
+       {
+        $this->db->insert('order_item', $data);
+        }
 } 
  

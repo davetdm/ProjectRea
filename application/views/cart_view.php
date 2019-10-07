@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tbody>
                  
             </table>
-            <a href="<?php echo base_url('product/checkout'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-Right"></i> Continue To checkout</a>
+            <a href="<?php echo base_url('checkout'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-Right"></i> Continue To checkout</a>
         </div>
     </div>
 </div>
