@@ -64,9 +64,9 @@ class Product extends CI_Controller {
        } else {
            var_dump($result);
        }    
-   }
-   public function saveProduct() 
-   {
+    }
+    public function saveProduct() 
+    {
 	 $data=array(
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
@@ -91,7 +91,6 @@ class Product extends CI_Controller {
     {
        $this-> viewProducts();
     }
-  
     public function checkout(){
         $data = [
             "title" => ucfirst("Check-out"),
@@ -102,52 +101,50 @@ class Product extends CI_Controller {
         // $data['title'] = ucfirst("Check-out");
         // $data["assets"] = $this->config->item('assets');
         // $data['cartItems'] = $this->ProductModel->getItems(); 
-        $this->load->view("checkout", $data);
-        
-   }
-   public function shoppingCart(){
+        $this->load->view("checkout", $data);        
+    }
+    public function shoppingCart(){
     $data['title'] = ucfirst("Shopping Cart");
     $data["assets"] = $this->config->item('assets');
     $data['products'] = $this->ProductModel->getProducts(); 
-    $this->load->view("cart_view", $data);
-    
-}
-public function addCustomer()
-{
-    $data=array(
+    $this->load->view("cart_view", $data);   
+    }
+    public function addCustomer()
+    {
+      $data=array(
         'id'=>$this->input->post('id'),
         'first_name'=>$this->input->post('first_name'),
         'surname'=>$this->input->post('surname'),
         'email'=>$this->input->post('email'),
         'phone_number'=>$this->input->post('phone_number')
-        );
+      );
      
-    $result = $this->ProductModel->orderItem($data);
-    if ($result == true){
+      $result = $this->ProductModel->orderItem($data);
+      if ($result == true)
+      {
         echo "Thank you.. please call again!";
         $this->cart->destroy();
-    } else {
+      } else {
         var_dump($result);
+      }
+     redirect (base_url()."Product/order");
     }
-    redirect (base_url()."Product/order");
-}
-
-public function order(){
-    $data['title'] = ucfirst("Order");
-    $data["assets"] = $this->config->item('assets');
-    $data["page"] = "billing";
-    $data['cartItems'] = $this->ProductModel->getItems(); 
-    $this->load->view("billing", $data);
+    public function order()
+    {
+      $data['title'] = ucfirst("Order");
+      $data["assets"] = $this->config->item('assets');
+      $data["page"] = "billing";
+      $data['cartItems'] = $this->ProductModel->getItems(); 
+      $this->load->view("billing", $data);
     
-}
-public function orderStatus(){
-    $data['title'] = ucfirst("Order Status");
-    $data["assets"] = $this->config->item('assets');
-    $data["page"] = "orderstatus";
-    $data['cartItems'] = $this->ProductModel->getItems(); 
-    $this->load->view("orderstatus", $data);
-    
-}
-
+    }
+    public function orderStatus()
+    {
+      $data['title'] = ucfirst("Order Status");
+      $data["assets"] = $this->config->item('assets');
+      $data["page"] = "orderstatus";
+      $data['cartItems'] = $this->ProductModel->getItems(); 
+      $this->load->view("orderstatus", $data);    
+    }
 }
    

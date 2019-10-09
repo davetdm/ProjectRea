@@ -261,7 +261,6 @@ $('#orderForm').submit(function() {
     var url = $('#orderForm').attr("action");
     var method = $('#orderForm').attr("method");
     var data = $('#orderForm').serialize();
- // print_r($data);
     $.ajax({
         url: url,
         method: method,
@@ -312,5 +311,25 @@ $(document).ready(function()
     });
 });
 
+function check_if_exists() {
+
+    var email = $("#email").val();
+    $.ajax({
+            type:"POST",
+            url: url,
+            data:{ email:email},
+            success:function(response)
+            {
+                if (response == true) 
+                {
+                    $('#msg').html('<span style="color: green;">'+msg+"</span>");
+                }
+                else 
+                {
+                    $('#msg').html('<span style="color:red;">Value does not exist</span>');
+                }  
+            }
+        });
+    }
 
 

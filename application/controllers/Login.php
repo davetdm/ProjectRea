@@ -18,43 +18,45 @@ class Login extends CI_Controller {
     }
     public function userLogin()
     {
-        $type = $this->input->post('userName',TRUE);
+        $email = $this->input->post('email',TRUE);
         $password =Sha1($this->input->post($this->salt.'password1',TRUE));
-        $result = $this->WelcomeModel->user_Login($type,$password);
+        $result = $this->WelcomeModel->user_Login($email,$password);
        // $encryptpass = $this->encryption->sha1($salt.$password);
 
-        if($result->num_rows() > 0){
-            $data  = $result->row_array();
-            $type = $data['type'];
-            $password = $data['password'];
-            $sesdata = array(
-                'userName'  => $type,
-                'password'  => $password,
-                'is_online' => TRUE
-            );
+        if($result->num_rows() > 0)
+        {
+          $data  = $result->row_array();
+          $email = $data['email'];
+          $password = $data['password'];
+          $sesdata = array(
+            'email'  => $email,
+            'password'  => $password,
+            'is_online' => TRUE
+        );
            // echo "login successful";
-           $this->session->set_userdata($sesdata);
-           redirect('dashboard');
+          $this->session->set_userdata($sesdata);
+          redirect('dashboard');
        
         }else{
-        echo $this->session->set_flashdata('msg','Username or Password is Wrong');
-        redirect('login');
-    }
+          echo $this->session->set_flashdata('msg','email or Password is Wrong');
+          redirect('login');
+        }
          print_r($sesdata);
-    }
-    
-    public function logout(){
-        $this->session->sess_destroy();
-        redirect('login');
+    }  
+  
+    public function logout()
+    {
+      $this->session->sess_destroy();
+      redirect('login');
     }
     public function forgotPass()
     {
-        $email = $this->input->post('email');
+      $email = $this->input->post('email');
        // $result = $this->WelcomeModel->forgotPassword($email);
-        $data = [
-            "title" => "Forgot Password",
-            "assets" => $this->config->item('assets'),
-            "page" => "forgot_password",
+      $data = [
+        "title" => "Forgot Password",
+        "assets" => $this->config->item('assets'),
+        "page" => "forgot_password",
           //  "users" => $result
         ];
         $this->load->view('forgot_password', $data);
@@ -66,5 +68,6 @@ class Login extends CI_Controller {
        //   $this->session->set_flashdata('msg', 'Email not found!');
 
        // }
-    }    
+    }
+
 }

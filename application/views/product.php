@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="field-group">
                             <div class="content-input-field">
                                
-                                Image Upload:
+                                <label>Image Upload:</label>
                                 <input type="file" name="picture" id="picture" accept="image/*">
                             </div>
                         </div>
@@ -41,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <br/>
                         <div class="content-input-field">
-                            <a href="<?php echo base_url(); ?>product/viewProducts" class="btn btn-primary btn-lg btn-block">List Products</a>
-                        </div>
-                        
+                            <a href="<?php echo base_url(); ?>product/viewProducts" 
+                            class="btn btn-primary btn-lg btn-block">List Products</a>
+                        </div>  
                     </form>
                 </div>
             </div>

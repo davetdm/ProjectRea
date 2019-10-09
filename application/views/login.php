@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                      <div class="field-group">
                          <div class="content-input-field">
-                             <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
+                             <input name="email" id="email" type="text" value="" placeholder="Email" required="">
                          </div>
                     </div>
                     <div class="field-group">

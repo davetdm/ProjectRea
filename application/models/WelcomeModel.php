@@ -2,11 +2,13 @@
 
 class WelcomeModel extends CI_Model {
 
-  public function __construct() {
+  public function __construct()
+  {
     parent::__construct();
   }
 
-  public function addproduct($data){
+  public function addproduct($data)
+  {
 
     $this->db->insert('product', $data);
     return true;
@@ -24,32 +26,52 @@ class WelcomeModel extends CI_Model {
     $this->db->insert('users', $data);
     return true;
   }
-  public function user_Login($type,$password){
-    $this->db->where('type',$type);
+  public function user_Login($email,$password){
+    $this->db->where('email',$email);
     $this->db->where('password',$password);
     $result = $this->db->get('users',1);
     return $result;
   }
-  public function activationEmail($first_name='', $last_name='', $email='', $verification_key='')
+  public function sendEmail($receiver)
   {
-    $this->load->library('email');
-    $config = Array(
-      'protocol' => 'smtp',
-      'smtp_host' => 'ssl://smtp.googlemail.com',
-      'smtp_port' => 465,
-      'smtp_user' => 'thatomashifane@gmail.com',
-      'smtp_pass' => 'xxx',
-      'mailtype'  => 'html', 
-      'charset'   => 'iso-8859-1'
-    );
-  
-    $this->email->from('thatomashifane@gmail.com', 'Thato');
-    $this->email->to('gmail.com'); 
-
-    $this->email->subject('Confirm Email');
-    $this->email->message('Testing the email class.');  
-
-    $result = $this->email->send();
+    $from = "thatomashifane@gmail.com";    
+    $subject = 'Verify email address';  
+    
+    $message = 'Dear User,<br><br> Please click on the below activation link to verify your email address<br><br>
+    <a href=\'http://www.localhost/ProjectRea/Registger/confirmEmail/'.Sha1($receiver).'\'>
+    http://www.localhost/ProjectRea/Registger/confirmEmail/'. Sha1($receiver) .'</a><br><br>Thanks';
+    
+    $config['protocol'] = 'smtp';
+    $config['smtp_host'] = 'ssl://smtp.gmail.com';
+    $config['smtp_port'] = '465';
+    $config['smtp_user'] = $from;
+    $config['smtp_pass'] = '0729232639';  
+    $config['mailtype'] = 'html';
+    $config['charset'] = 'iso-8859-1';
+    $config['wordwrap'] = 'TRUE';
+    $config['newline'] = "\r\n"; 
+    
+    $this->load->library('email', $config);
+    $this->email->initialize($config);
+    $this->email->from($from);
+    $this->email->to($receiver);
+    $this->email->subject($subject);
+    $this->email->message($message);
+    
+    if($this->email->send()){
+      //for testing   
+      echo "email successful";
+        return true;
+    }else{
+        echo "email send failed";
+        return false;
+    }
+      
+  }
+  public function verifyEmail($key){
+    $data = array('status' => 1);
+    $this->db->where('Sha1(email)',$key);
+    return $this->db->update('users', $data);    
   }
   public function dashboard($id)
   {
@@ -59,13 +81,13 @@ class WelcomeModel extends CI_Model {
     $query = $this->db->get("users");
     return $query->result();
   }
-  public function forgot_pass(){
+  public function forgot_pass($email){
     $this->db->select('email');
     $this->db->from('users');
     $this->db->where('email', $email);
     $query=$this->db->get();
-    return $query->row_array();
-    
+    $result = $query->result_array();   
+    return $result;
   }
  
  

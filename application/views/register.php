@@ -11,20 +11,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="content-bottom">
                     <form id="registerForm" action="<?php echo site_url('register/register_user'); ?>" method="post">
+                        <?php echo $this->session->flashdata('msg'); ?>
                         <div class="field-group">
-
-                        <div class="content-input-field">
+                            <div class="content-input-field">
                                 <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">
                             </div>
                         </div>
                         <div class="field-group">
-
                             <div class="content-input-field">
-                                <input name="email" id="email" type="email" value="" placeholder="User Email" required="">
+                                <input name="email" id="email" type="email" value="" placeholder="User Email"  onblur="check_if_exists();" required="">
                             </div>
                         </div>
                         <div class="field-group">
-
                             <div class="content-input-field">
                                 <input name="phone_number" id="phone_number" type="text" value="" placeholder="UserPhone" required="">
                             </div>
@@ -43,11 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <button type="submit" class="btn">Sign Up</button>
                         </div>
                         <div class="list-login-bottom text-center mt-lg-5 mt-4">
-
-                            <a href="#" class="">By clicking Signup, I agree to your terms</a>
-
-
-
+                          <a href="#" class="">By clicking Signup, I agree to your terms</a>
                         </div>
                     </form>
                 </div>
