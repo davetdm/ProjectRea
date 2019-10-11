@@ -8,6 +8,7 @@ class Login extends CI_Controller {
    }
     public function index($page = "login")
     {
+<<<<<<< HEAD
        $data['title'] = ucfirst($page);
        $data["assets"] = $this->config->item('assets');
        $data["page"] = "login";
@@ -77,4 +78,58 @@ class Login extends CI_Controller {
     $this->load->view("new", $data);
     
 }
+=======
+        $email = $this->input->post('email',TRUE);
+        $password =Sha1($this->input->post($this->salt.'password1',TRUE));
+        $result = $this->WelcomeModel->user_Login($email,$password);
+       // $encryptpass = $this->encryption->sha1($salt.$password);
+
+        if($result->num_rows() > 0)
+        {
+          $data  = $result->row_array();
+          $email = $data['email'];
+          $password = $data['password'];
+          $sesdata = array(
+            'email'  => $email,
+            'password'  => $password,
+            'is_online' => TRUE
+        );
+           // echo "login successful";
+          $this->session->set_userdata($sesdata);
+          redirect('dashboard');
+       
+        }else{
+          echo $this->session->set_flashdata('msg','email or Password is Wrong');
+          redirect('login');
+        }
+         print_r($sesdata);
+    }  
+  
+    public function logout()
+    {
+      $this->session->sess_destroy();
+      redirect('login');
+    }
+    public function forgotPass()
+    {
+      $email = $this->input->post('email');
+       // $result = $this->WelcomeModel->forgotPassword($email);
+      $data = [
+        "title" => "Forgot Password",
+        "assets" => $this->config->item('assets'),
+        "page" => "forgot_password",
+          //  "users" => $result
+        ];
+        $this->load->view('forgot_password', $data);
+        
+       // if ($result) {
+       // $this->WelcomeModel->sendpassword($result);
+       // } else {
+
+       //   $this->session->set_flashdata('msg', 'Email not found!');
+
+       // }
+    }
+
+>>>>>>> ac0a1cdda392aaa7014afbd18dd2f5d79f38acb8
 }
