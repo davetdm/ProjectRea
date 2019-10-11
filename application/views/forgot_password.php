@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="content-grid">
             <div class="text-center icon">
                 <span class="fa fa-unlock-alt"></span>
+                <h2>Forgot Password</h2>
             </div>
             <div class="content-bottom">
                  <form name="forgotForm" id="forgotForm" action="<?php echo base_url('login/forgotPass'); ?>" method="post">
