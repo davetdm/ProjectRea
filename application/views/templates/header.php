@@ -64,6 +64,7 @@
                                 </li>
                                 <li><a href="<?php echo base_url(); ?>shop">Collections</a></li>
                                 <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
+                                <li><a href="<?php echo base_url(); ?>cart">Shopping Cart</a></li>
                             </ul>
                         </nav>
                         <!-- //nav -->

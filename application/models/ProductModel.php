@@ -90,6 +90,23 @@ class ProductModel extends CI_Model
      public function insert_order_detail($data)
        {
         $this->db->insert('order_item', $data);
-        }
+  
+    }
+
+    function getStatus()
+    {
+        $this->db->select("id, status,status_date,order_id"); 
+        $this->db->from('order_status');
+        $query = $this->db->get();
+        return $query->result();
+     }
+     public function status($id)
+     {
+       $this->db->select("*"); 
+       $this->db->where('id = 1');
+       //$this->db->where('id', $id);
+       $query = $this->db->get("users");
+       return $query->result();
+     }
 } 
  

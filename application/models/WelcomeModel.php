@@ -30,6 +30,27 @@ class WelcomeModel extends CI_Model {
     $result = $this->db->get('users',1);
     return $result;
   }
+  public function activationEmail($first_name='', $last_name='', $email='', $verification_key='')
+  {
+    $this->load->library('email');
+    $config = Array(
+      'protocol' => 'smtp',
+      'smtp_host' => 'ssl://smtp.googlemail.com',
+      'smtp_port' => 465,
+      'smtp_user' => 'thatomashifane@gmail.com',
+      'smtp_pass' => 'xxx',
+      'mailtype'  => 'html', 
+      'charset'   => 'iso-8859-1'
+    );
+  
+    $this->email->from('thatomashifane@gmail.com', 'Thato');
+    $this->email->to('gmail.com'); 
+
+    $this->email->subject('Confirm Email');
+    $this->email->message('Testing the email class.');  
+
+    $result = $this->email->send();
+  }
   public function dashboard($id)
   {
     $this->db->select("*"); 
@@ -46,53 +67,6 @@ class WelcomeModel extends CI_Model {
     return $query->row_array();
     
   }
-  public function sendpassword($data)
-{
-    $email = $data['email'];
-    $query1=$this->db->query("SELECT *  from users where email = '".$email."' ");
-    $row=$query1->result_array();
-    if ($query1->num_rows()>0)
-{
-        $passwordplain = "";
-        $passwordplain  = rand(999999999,9999999999);
-        $newpass['password'] = Sha1($passwordplain);
-        $this->db->where('email', $email);
-        $this->db->update('employer_registration', $newpass);
-        $mail_message='Dear '.$row[0]['name'].','. "\r\n";
-        $mail_message.='Thanks for contacting regarding to forgot password,<br> Your <b>Password</b> is <b>'.$passwordplain.'</b>'."\r\n";
-        $mail_message.='<br>Please Update your password.';
-        $mail_message.='<br>Thanks & Regards';
-        $mail_message.='<br>Your company name';
-        require 'PHPMailerAutoload.php';
-        require 'class.phpmailer.php';
-        $mail = new PHPMailer;
-        $mail->IsSendmail();
-        $mail->isSMTP();
-        $mail->SMTPAuth = true;
-        $mail->Host = "hostname";
-        $subject = 'Testing Email';
-        $mail->AddAddress($email);
-        $mail->IsMail();
-        $mail->From = 'admin@***.com';
-        $mail->FromName = 'admin';
-        $mail->IsHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $mail_message;
-        $mail->Send();
-        if (!$mail->send()) {
-
-            echo "<script>alert('msg','Failed to send password, please try again!')</script>";
-        } else {
-
-            echo "<script>alert('msg','Password sent to your email!')</script>";
-        }
-    }
-    else
-    {
-
-        echo "<script>alert('msg','Email not found try again!')</script>";
-        redirect(base_url().'');
-    }
-}
+ 
  
 }

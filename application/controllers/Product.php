@@ -15,13 +15,12 @@ class Product extends CI_Controller {
        $data["assets"] = $this->config->item('assets');
        $data["page"] = "product";
        $this->load->view($page, $data);     
-       //$this->load->view('content', $data);
-       //$this->load->view("myscript");
     }
     public function viewProducts()
     {
         $data['title'] = ucfirst("View Products");
         $data["assets"] = $this->config->item('assets');
+        $data["page"] = "View Products";
         $data['products'] = $this->ProductModel->getProducts(); 
         $this->load->view("view_products", $data);
     }
@@ -33,6 +32,7 @@ class Product extends CI_Controller {
       $data = [
         "title" => "Edit Product",
         "assets" => $this->config->item('assets'),
+        "page" => "edit_product",
         "product" => $product
       ];    
       $this->load->view("edit_product", $data);
@@ -44,8 +44,9 @@ class Product extends CI_Controller {
       $data = [
         "title" => "delete Product",
         "assets" => $this->config->item('assets'),
+        "page"=> "delete_product",
         "product" => $product
-      ];      
+      ];   
      $this->load->view("delete_product", $data);
     }
     public function addProduct()
@@ -70,7 +71,7 @@ class Product extends CI_Controller {
         'name'=>$this->input->post('name'),
         'color'=>$this->input->post('color'),
         'price'=>$this->input->post('price'),
-        'picture'=>$this->input->post('picture')
+        'picture'=>$this->upload->data()
         );
         $result = $this->ProductModel->saveProduct($data);
        
@@ -97,17 +98,12 @@ class Product extends CI_Controller {
 public function order(){
     $data['title'] = ucfirst("Order");
     $data["assets"] = $this->config->item('assets');
+    $data["page"] = "billing";
     $data['cartItems'] = $this->ProductModel->getItems(); 
     $this->load->view("billing", $data);
     
 }
-public function orderStatus(){
-    $data['title'] = ucfirst("Order Status");
-    $data["assets"] = $this->config->item('assets');
-    $data['cartItems'] = $this->ProductModel->getItems(); 
-    $this->load->view("orderstatus", $data);
-    
-}
+
 
 }
    

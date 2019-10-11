@@ -283,13 +283,13 @@ $(document).ready(function()
     $('.add_cart').click(function(){
         var id    = $(this).data("id");
         var name  = $(this).data("name");
-        //var color = $(this).data("color");
+        var picture = $(this).data("picture");
         var price = $(this).data("price");
         var quantity = $('#' + id).val();
         $.ajax({
             url : $(this).data("url"),
             method : "POST",
-            data : {id: id, name: name, price: price,quantity: quantity},
+            data : {id: id, name: name, price: price,picture: picture,quantity: quantity},
             success: function(data){
                 $('#detail_cart').html(data);
             }

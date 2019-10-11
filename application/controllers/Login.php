@@ -69,4 +69,12 @@ class Login extends CI_Controller {
       //   $this->session->set_flashdata('msg', 'Email not found!');
       // }
    }
+   public function login(){
+    $data['title'] = ucfirst("Login / Register");
+    $data["assets"] = $this->config->item('assets');
+    $data["page"] = "new";
+    $data['cartItems'] = $this->ProductModel->getItems(); 
+    $this->load->view("new", $data);
+    
+}
 }
