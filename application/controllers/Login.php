@@ -1,20 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Login extends CI_Controller {
 
-    public function __construct() {
-        parent::__construct();
-        // $this->load->helper('url', 'form');
-        // $this->load->form();    
-    }
-    
-	public function index($page = "login")
-	{
-        $data['title'] = ucfirst($page);
-        $data["assets"] = $this->config->item('assets');
-        $data["page"] = "login";
-		$this->load->view($page, $data);
+   public function __construct() 
+   {
+       parent::__construct();
+       // $this->load->helper('url', 'form');
+       // $this->load->form();
+   }
+    public function index($page = "login")
+    {
+      $data['title'] = ucfirst($page);
+      $data["assets"] = $this->config->item('assets');
+      $data["page"] = "login";
+       $this->load->view($page, $data);
     }
     public function userLogin()
     {
@@ -68,6 +67,25 @@ class Login extends CI_Controller {
        //   $this->session->set_flashdata('msg', 'Email not found!');
 
        // }
+    }
+    public function login(){
+        $data['title'] = ucfirst("Login / Register");
+        $data["assets"] = $this->config->item('assets');
+        $data["page"] = "new";
+        $data['cartItems'] = $this->ProductModel->getItems(); 
+        $this->load->view("new", $data);
+        
+    }
+    public function change(){
+      $data['title'] = ucfirst('Change Passwword');
+      $data['assets'] = $this->config->item('assets');
+      $data['page'] = 'change_password';
+      $this->load->view('change_password', $data);
+
+      $oldPass=$this->input->post('old_password');
+      $newPass=$this->input->post('password1');
+      $rePass=$this->input->post('cPassword');
+
     }
 
 }

@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="content-bottom">
                     <form id="registerForm" action="<?php echo site_url('register/register_user'); ?>" method="post">
                         <?php echo $this->session->flashdata('msg'); ?>
+                        <?php echo $this->session->flashdata('email_sent');?>
                         <div class="field-group">
                             <div class="content-input-field">
                                 <input name="userName" id="userName" type="text" value="" placeholder="User Name" required="">

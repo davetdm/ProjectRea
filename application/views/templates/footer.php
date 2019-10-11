@@ -89,6 +89,9 @@
                         <li>
                             <a href="contact"><span class="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
                         </li>
+                        <li>
+                        <a href="cart"><span class="fa fa-angle-right" aria-hidden="true"></span> Shopping Cart</a>
+                        </li>
                     </ul>
                 </div>
 

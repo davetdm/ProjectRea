@@ -26,7 +26,8 @@ class WelcomeModel extends CI_Model {
     $this->db->insert('users', $data);
     return true;
   }
-  public function user_Login($email,$password){
+  public function user_Login($email,$password)
+  {
     $this->db->where('email',$email);
     $this->db->where('password',$password);
     $result = $this->db->get('users',1);
@@ -58,13 +59,11 @@ class WelcomeModel extends CI_Model {
     $this->email->subject($subject);
     $this->email->message($message);
     
-    if($this->email->send()){
-      //for testing   
-      echo "email successful";
-        return true;
+    if($this->email->send())
+    { 
+      $this->session->set_flashdata("email_sent","Congragulation Email Send Successfully.");
     }else{
-        echo "email send failed";
-        return false;
+      $this->session->set_flashdata("email_sent","You have encountered an error");     
     }
       
   }
@@ -89,6 +88,5 @@ class WelcomeModel extends CI_Model {
     $result = $query->result_array();   
     return $result;
   }
- 
  
 }

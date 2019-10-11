@@ -7,10 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="content-grid">
                 <div class="text-center icon">
-                    <span class="fa fa-user-circle-o"></span>
+                    <span class="fa fa-key"></span>
+                    <h3> Change Password </h3>
                 </div>
                 <div class="content-bottom">
-                    <form id="changeForm" action="<?php echo site_url('register/register_user'); ?>" method="post">
+                    <form name="changeForm" id="changeForm" action="<?php echo site_url('login/change'); ?>" method="post">
                         <?php echo $this->session->flashdata('msg'); ?>
                         <div class="field-group">
                             <div class="content-input-field">
@@ -24,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="field-group">
                             <div class="content-input-field">
-                                <input name="cPassword" id="cPassword" type="Password" placeholder="Confirm Password">
+                                <input name="cPassword" id="cPassword" type="Password" placeholder="Repeat Password">
                             </div>
                         </div>
                         <div class="content-input-field">

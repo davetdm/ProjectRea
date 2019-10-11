@@ -26,7 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <h6>R<?php echo ($row->price);?>.00</h6>
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="number" name="quantity" id="<?php echo $row->id;?>" value="1" class="quantity form-control">
+                                    <input type="number" name="quantity" id="<?php echo $row->id;?>" 
+                                    value="1" class="quantity form-control">
                                 </div>
                             </div>
                             <button class="add_cart btn btn-success btn-block" 
@@ -59,10 +60,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <tbody name="detail_cart" id="detail_cart">
                     <script>let cart_url = "<?php echo base_url() . "cart/load_cart"; ?>";</script>
                     <script>let carts_url = "<?php echo base_url() . "cart/delete_cart"; ?>";</script>
-                </tbody>
-                 
+                </tbody>                 
             </table>
-            <a href="<?php echo base_url('product/checkout'); ?>" class="btn btn-warning"><i class="glyphicon glyphicon-menu-Right"></i> Continue To checkout</a>
+           <!-- <a href="<?php echo base_url('product/checkout'); ?>" class="btn btn-warning">
+            <i class="glyphicon glyphicon-menu-Right"></i> Continue To checkout</a> -->
+            <a href="<?php echo base_url('login/login'); ?>" class="btn btn-warning">
+            <i class="glyphicon glyphicon-menu-Right"></i> Continue To checkout</a>
         </div>
     </div>
 </div>

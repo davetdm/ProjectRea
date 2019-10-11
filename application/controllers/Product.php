@@ -91,6 +91,22 @@ class Product extends CI_Controller {
     {
        $this-> viewProducts();
     }
+<<<<<<< HEAD
+  
+  
+
+
+public function order(){
+    $data['title'] = ucfirst("Order");
+    $data["assets"] = $this->config->item('assets');
+    $data["page"] = "billing";
+    $data['cartItems'] = $this->ProductModel->getItems(); 
+    $this->load->view("billing", $data);
+    
+}
+
+
+=======
     public function checkout(){
         $data = [
             "title" => ucfirst("Check-out"),
@@ -146,5 +162,6 @@ class Product extends CI_Controller {
       $data['cartItems'] = $this->ProductModel->getItems(); 
       $this->load->view("orderstatus", $data);    
     }
+>>>>>>> ac0a1cdda392aaa7014afbd18dd2f5d79f38acb8
 }
    

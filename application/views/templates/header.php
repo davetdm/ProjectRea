@@ -64,6 +64,7 @@
                                 </li>
                                 <li><a href="<?php echo base_url(); ?>shop">Collections</a></li>
                                 <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
+                                <li><a href="<?php echo base_url(); ?>cart">Shopping Cart</a></li>
                             </ul>
                         </nav>
                         <!-- //nav -->
@@ -88,7 +89,6 @@
                             <h3>The Largest Range <span>of HandBags</span></h3>
                             <a href="shop" class="btn shop">Shop Now</a>
                         </div>
-
                         <div class="col-lg-7 banner-img">
                             <img src="<?php echo base_url($assets."/images/bag.png") ?>" alt="part image" class="img-fluid">
                         </div>

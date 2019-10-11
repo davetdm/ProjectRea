@@ -45,11 +45,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="content-grid">
             <h2>Shipping Info</h2>
             <br>
+<<<<<<< HEAD
+                <div class="content-bottom">
+                    <form id="orderForm" action="<?php echo base_url(); ?>checkout/addOrder"  method="post">
+                        <div class="field-group">
+                            <div class="content-input-field">
+                                <input name="first_name" id="name" type="text" value="" placeholder="First Name" required="">
+                            </div>
+=======
             <div class="content-bottom">
                 <form id="orderForm" action="<?php echo base_url(); ?>product/addCustomer"  method="post">
                     <div class="field-group">
                          <div class="content-input-field">
                             <input name="first_name" id="name" type="text" value="" placeholder="First Name" required="">
+>>>>>>> ac0a1cdda392aaa7014afbd18dd2f5d79f38acb8
                         </div>
                     </div>
                     <div class="field-group">
